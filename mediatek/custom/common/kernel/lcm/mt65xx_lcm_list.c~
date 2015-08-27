@@ -1,0 +1,2312 @@
+#include <lcm_drv.h>
+
+extern LCM_DRIVER hx8369_lcm_drv;
+extern LCM_DRIVER hx8369_6575_lcm_drv;
+extern LCM_DRIVER hx8363_6575_dsi_lcm_drv;
+extern LCM_DRIVER hx8363_6575_dsi_hvga_lcm_drv;
+extern LCM_DRIVER hx8363_6575_dsi_qvga_lcm_drv;
+extern LCM_DRIVER hx8363b_wvga_dsi_cmd_drv;
+extern LCM_DRIVER bm8578_lcm_drv;
+extern LCM_DRIVER nt35582_mcu_lcm_drv;
+extern LCM_DRIVER nt35582_mcu_6575_lcm_drv;
+extern LCM_DRIVER nt35582_rgb_6575_lcm_drv;
+extern LCM_DRIVER r63302_sharp_LS035Y8DX02A_rgb_wvga_lcm_drv;
+extern LCM_DRIVER hx8357b_lcm_drv;
+extern LCM_DRIVER hx8357c_hvga_dsi_cmd_drv;
+extern LCM_DRIVER hx8369_dsi_lcm_drv;
+extern LCM_DRIVER hx8369_dsi_6575_lcm_drv;
+extern LCM_DRIVER hx8369_dsi_6575_hvga_lcm_drv;
+extern LCM_DRIVER hx8369_dsi_6575_qvga_lcm_drv;
+extern LCM_DRIVER hx8369_dsi_vdo_lcm_drv;
+extern LCM_DRIVER hx8369b_dsi_vdo_lcm_drv;
+extern LCM_DRIVER hx8369b_wvga_dsi_vdo_drv;
+extern LCM_DRIVER hx8389b_qhd_dsi_vdo_drv;
+extern LCM_DRIVER hx8389b_kelai_dsi_vdo_qhd_lcm_drv;
+extern LCM_DRIVER hx8369_hvga_lcm_drv;
+extern LCM_DRIVER ili9481_lcm_drv;
+extern LCM_DRIVER nt35582_lcm_drv;
+extern LCM_DRIVER s6d0170_lcm_drv;
+extern LCM_DRIVER spfd5461a_lcm_drv;
+extern LCM_DRIVER ta7601_lcm_drv;
+extern LCM_DRIVER tft1p3037_lcm_drv;
+extern LCM_DRIVER ha5266_lcm_drv;
+extern LCM_DRIVER hsd070idw1_lcm_drv;
+extern LCM_DRIVER lg4571_lcm_drv;
+extern LCM_DRIVER lg4573b_wvga_dsi_vdo_lh430mv1_drv;
+extern LCM_DRIVER lvds_wsvga_lcm_drv;
+extern LCM_DRIVER lvds_wsvga_ti_lcm_drv;
+extern LCM_DRIVER lvds_wsvga_ti_n_lcm_drv;
+extern LCM_DRIVER nt35565_3d_lcm_drv;
+extern LCM_DRIVER tm070ddh03_lcm_drv;
+extern LCM_DRIVER r61408_lcm_drv;
+extern LCM_DRIVER r61408_wvga_dsi_cmd_drv;
+extern LCM_DRIVER nt35510_lcm_drv;
+extern LCM_DRIVER nt35510_dpi_lcm_drv;
+extern LCM_DRIVER nt35510_hvga_lcm_drv;
+extern LCM_DRIVER nt35510_qvga_lcm_drv;
+extern LCM_DRIVER nt35510_wvga_dsi_cmd_drv;
+extern LCM_DRIVER nt35510_6517_lcm_drv;
+extern LCM_DRIVER nt35510_dsi_cmd_6572_drv;
+extern LCM_DRIVER nt35510_dsi_cmd_6572_hvga_drv;
+extern LCM_DRIVER nt35510_dsi_cmd_6572_fwvga_drv;
+extern LCM_DRIVER nt35510_dsi_vdo_6572_drv;
+extern LCM_DRIVER nt35510_mcu_6572_lcm_drv;
+extern LCM_DRIVER r63303_idisplay_lcm_drv;
+extern LCM_DRIVER hj080ia_lcm_drv;
+extern LCM_DRIVER hj101na02a_lcm_drv;
+extern LCM_DRIVER hsd070pfw3_lcm_drv;
+extern LCM_DRIVER scf0700m48ggu02_lcm_drv;
+extern LCM_DRIVER nt35510_fwvga_lcm_drv;
+#if defined(GN_SSD2825_SMD_S6E8AA)
+extern LCM_DRIVER gn_ssd2825_smd_s6e8aa;
+#endif
+extern LCM_DRIVER hx8369_dsi_bld_lcm_drv;
+extern LCM_DRIVER hx8369_dsi_tm_lcm_drv;
+extern LCM_DRIVER otm1280a_hd720_dsi_cmd_drv;	 
+extern LCM_DRIVER otm8018b_dsi_vdo_lcm_drv;	 
+extern LCM_DRIVER nt35512_dsi_vdo_lcm_drv;
+extern LCM_DRIVER nt35512_wvga_dsi_vdo_boe_drv;
+extern LCM_DRIVER hx8369_rgb_6585_fpga_lcm_drv;
+extern LCM_DRIVER hx8369_rgb_6572_lcm_drv;
+extern LCM_DRIVER hx8369_rgb_6572_fpga_lcm_drv;
+extern LCM_DRIVER hx8369_mcu_6572_lcm_drv;
+extern LCM_DRIVER hx8369a_wvga_dsi_cmd_drv;
+extern LCM_DRIVER hx8369a_wvga_dsi_vdo_drv;
+extern LCM_DRIVER hx8392a_dsi_cmd_lcm_drv;
+extern LCM_DRIVER nt35590_hd720_dsi_vdo_truly_lcm_drv;
+extern LCM_DRIVER ssd2075_hd720_dsi_vdo_truly_lcm_drv;
+extern LCM_DRIVER nt35590_hd720_dsi_cmd_drv;
+extern LCM_DRIVER nt35590_hd720_dsi_cmd_auo_lcm_drv;
+extern LCM_DRIVER nt35590_hd720_dsi_cmd_auo_fwvga_lcm_drv;
+extern LCM_DRIVER nt35590_hd720_dsi_cmd_auo_qhd_lcm_drv;
+extern LCM_DRIVER nt35590_hd720_dsi_cmd_cmi_lcm_drv;
+extern LCM_DRIVER nt35516_qhd_dsi_cmd_ipsboe_lcm_drv;
+extern LCM_DRIVER nt35516_qhd_dsi_cmd_ipsboe_wvga_lcm_drv;
+extern LCM_DRIVER nt35516_qhd_dsi_cmd_ips9k1431_drv;
+extern LCM_DRIVER nt35516_qhd_dsi_cmd_tft9k1342_drv;
+extern LCM_DRIVER bp070ws1_lcm_drv;
+extern LCM_DRIVER bp101wx1_lcm_drv;
+extern LCM_DRIVER bp101wx1_n_lcm_drv;
+extern LCM_DRIVER nt35516_qhd_rav4_lcm_drv;
+extern LCM_DRIVER r63311_fhd_dsi_vdo_sharp_lcm_drv;
+extern LCM_DRIVER r81592_hvga_dsi_cmd_drv;
+extern LCM_DRIVER rm68190_dsi_vdo_lcm_drv;
+extern LCM_DRIVER nt35596_fhd_dsi_vdo_truly_lcm_drv;
+extern LCM_DRIVER otm9608_wvga_dsi_cmd_drv;
+extern LCM_DRIVER nt35510_dbi_18bit_gionee_lcm_drv;
+extern LCM_DRIVER nt35510_zhongguandian_tft397h110_mcu_wvga_lcm_drv;
+extern LCM_DRIVER rm68180_zhuoershi_z40153n50q4m_mcu_wvga_lcm_drv;
+extern LCM_DRIVER otm8009a_sifang_mcu_wvga_lcm_drv;
+extern LCM_DRIVER otm8009a_aizhuoertai_a4019n50q0_mcu_wvga_lcm_drv;
+extern LCM_DRIVER otm9605_hansen_HS4532QHNC23_00_CMI_dsi_vdo_qhd_lcm_drv;
+extern LCM_DRIVER nt35510_hongsheng_HS4001065A_mcu_wvga_lcm_drv;
+extern LCM_DRIVER rm68180_feier_ftm397136a_mcu_wvga_lcm_drv;
+
+extern LCM_DRIVER ili9806_yihua_dsi_fwvga_lcm_drv;
+extern LCM_DRIVER ili9806_haifei_HF146391253B0_HSD_mcu18_fwvga_lcm_drv;
+extern LCM_DRIVER nt35512_hansheng_hs5053fwnc25_vdo_fwvga_lcm_drv;
+extern LCM_DRIVER otm9605A_ykl_dsi_vdo_qhq_lcm_drv;
+extern LCM_DRIVER otm9605a_ykl_LP045CPTP174A_AUO_dsi_2_vdo_qhd_lcm_drv;
+extern LCM_DRIVER otm9605a_suxian_S5001800A_BOE_dsi_2_qhd_lcm_drv;
+
+extern LCM_DRIVER otm9608a_daxian_D450N3178VO_TIANMA_dsi_2_qhd_lcm_drv;
+extern LCM_DRIVER otm9605a_yashu_YS500QH39_047A_CPT_dsi_2_vdo_qhd_lcm_drv;
+
+extern LCM_DRIVER otm8009a_hongsheng_hs4501071a_dsi_fwvga_lcm_drv;
+extern LCM_DRIVER  nt35510_hansen_HS40134WVNS39_00_HYDIS_mcu18_wvga_lcm_drv;
+extern LCM_DRIVER  otm9605a_dsi_vdo_lcm_drv;
+extern LCM_DRIVER  ili9806c_fwvga_dsi_vdo_drv;
+extern LCM_DRIVER otm8081b_hongtao_HJ4981BA_vdo_fwvga_lcm_drv;
+
+extern LCM_DRIVER nt35510_disipuli_dp0801_40wv_mcu_wvga_lcm_drv;
+extern LCM_DRIVER hx8389b_xingli_QHD0500D60225_dsi_vdo_qhd_lcm_drv;
+
+extern LCM_DRIVER  otm8018b_ykl_LM040APYP104A_dsi_fwvga_lcm_drv;
+extern LCM_DRIVER  ili9806_unix_ut45013a0_00_HSD_mcu18_fwvga_lcm_drv;
+extern LCM_DRIVER  ili9806_zhongguangdian_t40bmlp22_IVO_mcu24_wvga_lcm_drv;
+
+extern LCM_DRIVER nt35510h_tianchuangguang_T40BMLP22_CTC_mcu24_wvga_lcm_drv;
+extern LCM_DRIVER  otm8012_rixin_NST397WV3922ANP_HSD_mcu18_wvga_lcm_drv;
+extern LCM_DRIVER  otm8009a_hongtao_HT45009A_V0_CPT_mcu18_fwvga_lcm_drv;
+
+extern LCM_DRIVER nt35510_hannstar_HF4528_HSD_dsi_2_fwvga_lcm_drv;
+extern LCM_DRIVER hx8369a_huaxian_HX451023FP_BOE_dsi_2_fwvga_lcm_drv;
+
+extern LCM_DRIVER otm8009a_nisin_NSNST397WV3923ANP_CMI_mcu24_wvga_lcm_drv;
+
+extern LCM_DRIVER  otm8009a_hongda_HDKM0493_CMI_dsi_2_fwvga_lcm_drv;
+extern LCM_DRIVER rm68180_yashu_YS397WV39_159A_BOE_mcu18_wvga_lcm_drv;
+
+
+
+extern LCM_DRIVER ili9806_zhongguangdian_TFT397K144_IVO_mcu18_wvga_lcm_drv;
+
+extern LCM_DRIVER otm8012_nisin_NST397WV3932ANP_CMI_mcu18_wvga_lcm_drv;
+
+
+extern LCM_DRIVER  ili9806_hansen_HS5053FWNC25_01_dsi_CPT_fwvga_lcm_drv;
+extern LCM_DRIVER rm68180_haifei_HF150390000A01051616_HSD_mcu18_fwvga_lcm_drv;
+extern LCM_DRIVER rm68180_daxian_D397N3189V1_HYDIS_mcu18_wvga_lcm_drv;
+
+extern LCM_DRIVER ili9806_hansen_HS5063FWNC39_CPT_mcu18_fwvga_lcm_drv;
+extern LCM_DRIVER ili9806_xinyonglong_XYL4578_BOE_mcu18_fwvga_lcm_drv;
+extern LCM_DRIVER hx8369a_nisin_NST446FW2302ANK_TM_dsi_2_fwvga_lcm_drv;
+
+extern LCM_DRIVER otm8018b_yashu_YS500FW39_022A_BOE_dsi_fwvga_lcm_drv;
+
+extern LCM_DRIVER nt35516_dijing_90_25339_4277B_AUO_dsi_2_qhd_lcm_drv;
+extern LCM_DRIVER nt35516_aizhuoertai_A53027N50AN_AUO_dsi_2_qhd_lcm_drv;
+
+extern LCM_DRIVER hx8369a_haifei_HF_14539_2059_A0_CMI_mcu18_fwvga_lcm_drv;
+extern LCM_DRIVER nt35517_liken_HT8459RKF_dsi_qhd_lcm_drv;
+
+extern LCM_DRIVER hx8369a_hengsheng_HS045IK_01B_TM_mcu18_fwvga_lcm_drv;
+extern LCM_DRIVER otm9605A_ykl_dsi_vdo_qhd_lcm_drv;
+
+extern LCM_DRIVER ili9806_zhuoxian_FD050FWV011S_mcu18_fwvga_lcm_drv;
+extern LCM_DRIVER otm8009a_hentongkaixin_HT50019_A_HSD_mcu18_fwvga_lcm_drv;
+extern LCM_DRIVER otm8009a_hansen_HS5063FWNC39_00_CPT_mcu18_fwvga_lcm_drv;
+
+
+extern LCM_DRIVER hx8369a_hengsheng_HS040IH_01E_TM_mcu18_wvga_lcm_drv;
+extern LCM_DRIVER otm9608a_qicai_K45CO23_1322A_1N_CMO_dsi_2_qhd_lcm_drv;
+
+
+extern LCM_DRIVER otm9608a_chuangxing_CH45L1190V0_LG_dsi_2_qhd_lcm_drv;
+extern LCM_DRIVER hx8389b_huaxian_HX451139QP_BOE_dsi_2_qhd_lcm_drv;
+extern LCM_DRIVER hx8369a_HUARUI_MS_HX450939FP_BOE_mcu18_fwvga_lcm_drv;
+extern LCM_DRIVER nt35512_aizhuoertai_A40249N50XN_A_Hyundai_vdo_wvga_lcm_drv;
+extern LCM_DRIVER nt35510_aizhuoertai_A40249N50XN_A_Hyundai_dsi_wvga_lcm_drv;
+extern LCM_DRIVER nt35510_aizhuoertai_A40249N50AN_BOE_dsi_wvga_lcm_drv;
+extern LCM_DRIVER otm8009a_suxian_S_40_08700A_mcu_wvga_lcm_drv;
+
+extern LCM_DRIVER SH1282_NISIN_NST446FW2303ANJ_CMI_DSI_2_FWVGA_lcm_drv;
+extern LCM_DRIVER otm8009a_yixinda_Y82635_mcu_wvga_lcm_drv;
+extern LCM_DRIVER nt35510_belij_B12T40647N_mcu18_wvga_lcm_drv;
+extern LCM_DRIVER hx8363_songrui_ST040MOMS59_mcu18_wvga_lcm_drv;
+extern LCM_DRIVER ili9805_apex_a40179n50qi_a_mcu_wvga_lcm_drv;
+
+extern LCM_DRIVER otm8009a_aizuoertai_MS_A40230N00EO_CTC_mcu18_wvga_lcm_drv;
+extern LCM_DRIVER ili9806_hansen_HS40143WVNC39_CPT_mcu18_wvga_lcm_drv;
+
+extern LCM_DRIVER RM68190_YIKUAILAI_LQ050AMTP109A_AUO_DSI_2_QHD_VDO_lcm_drv;
+
+extern LCM_DRIVER rm68140_huisheng_VT35FC035_CTC_mcu18_hvga_lcm_drv;
+extern LCM_DRIVER otm8018b_huanyutong_HY105000604_vdo_fwvga_lcm_drv;
+extern LCM_DRIVER ili9806_huarui_S1562A_dsi_2_IVO_fwvga_vdo_lcm_drv;
+extern LCM_DRIVER ili9806_huarui_S1562A_dsi_2_IVO_wvga_vdo_lcm_drv;
+
+extern LCM_DRIVER otm8012a_suxian_S_40_08700B_mcu18_wvga_lcm_drv;
+extern LCM_DRIVER otm8012_nisin_NST397WV3923BNP_CMI_mcu18_wvga_lcm_drv;
+
+extern LCM_DRIVER otm8012a_suxian_S_40_08700B_BOE_mcu18_wvga_lcm_drv;
+
+extern LCM_DRIVER nt35510_chuangxing_ch40b1159v0_BOE_mcu_wvga_lcm_drv;
+extern LCM_DRIVER otm8018b_hongtao_HT45030A_V0_CPT_dsi_vdo_2_fwvga_lcm_drv;
+
+extern LCM_DRIVER rm68180_beilijia_B13T40804N_01_CMI_mcu18_wvga_lcm_drv;
+
+extern LCM_DRIVER NT35510_AIZHUOERTAI_A45108N50HN_HSD_MCU18_FWVGA_lcm_drv;
+extern LCM_DRIVER otm8012_hansen_HS5063FWNC39_02_CPT_mcu18_fwvga_lcm_drv;
+
+extern LCM_DRIVER nt35516h_xingguangxin_SBN45QH020AN_BOE_dsi_qhd_lcm_drv;
+extern LCM_DRIVER hx8389b_zuoershi_MSZ60038N50X3H_HSD_dsi_2_vdo_qhd_lcm_drv;
+extern LCM_DRIVER otm9605a_ykl_LP060HPTP023A_HSD_dsi_2_qhd_lcm_drv;
+extern LCM_DRIVER hx8389b_zuoershi_MSZ70012N50X3H_IVO_dsi_2_vdo_qhd_lcm_drv;
+
+
+extern LCM_DRIVER otm8012_haifei_HF145391127_A0_HSD_mcu18_fwvga_lcm_drv;
+extern LCM_DRIVER otm9608a_hengsheng_CPT_dsi_2_qhd_lcm_drv;
+extern LCM_DRIVER otm9608a_hengsheng_TM_dsi_2_qhd_lcm_drv;
+
+extern LCM_DRIVER nt35510_zhongguandian_TFT397Y110_HYDIS_mcu_wvga_lcm_drv;
+
+extern LCM_DRIVER otm8012_haifei_HF150300000A0_HSD_mcu18_fwvga_lcm_drv;
+extern LCM_DRIVER otm8012a_rixin_LNST397WV0020_CMI_mcu18_wvga_lcm_drv;
+extern LCM_DRIVER ili9806_zhongguangdian_TFT050H024_HSD_mcu18_fwvga_lcm_drv;
+
+extern LCM_DRIVER ili9806_zhongguangdian_TFT445K011_IVO_mcu18_fwvga_lcm_drv;
+extern LCM_DRIVER ili9806_zhongguangdian_TFT445H011_HSD_mcu18_fwvga_lcm_drv;
+extern LCM_DRIVER otm9605a_ykl_LP045APTP182A_AUO_dsi_2_qhd_lcm_drv;
+extern LCM_DRIVER nt35310_hyt_HY_103500612_126_A99_HSD_mcu18_hvga_lcm_drv;
+extern LCM_DRIVER nt35310_xld_XLD0351140V135_longteng_mcu18_hvga_lcm_drv;
+
+
+extern LCM_DRIVER otm9605_hengsheng_HS050PQ_76E_CPT_dsi_vdo_qhd_lcm_drv;
+
+extern LCM_DRIVER NT35510_HANSEN_HS40143WVNC39_00_CPT_MCU18_WVGA_lcm_drv;
+extern LCM_DRIVER nt35510_aizhuoertai_MS_A40230N50BN_BOE_mcu18_wvga_lcm_drv;
+
+extern LCM_DRIVER hx8389b_zhuoershi_MSZ50172N50X2H_HSD_dsi_vdo_qhd_lcm_drv;
+
+extern LCM_DRIVER nt35510_xingliangda_XLD0402110B1_35_BOE_mcu18_wvga_lcm_drv;
+extern LCM_DRIVER ili9806h_xingxunda_XII397110WV_IVO_mcu18_wvga_lcm_drv;
+extern LCM_DRIVER rm68140_jinping_JP35H038A0_longteng_mcu18_hvga_lcm_drv;
+extern LCM_DRIVER ili9806_huarui_S1382A_dsi_2_HSD_fwvga_vdo_lcm_drv;
+extern LCM_DRIVER otm8012_haifei_HF14639_0000_A0_IVO_mcu18_fwvga_lcm_drv;
+extern LCM_DRIVER nt35517_rixin_NST446QH3912ANJ_CMI_dsi_qhd_lcm_drv;
+extern LCM_DRIVER otm9608a_hengsheng_HF_15525_2085_A0_longteng_dsi_2_qhd_lcm_drv;
+extern LCM_DRIVER ili9806c_haoshitong_HF5024_QR_A_HSD_dsi_2_vdo_fwvga_lcm_drv;
+extern LCM_DRIVER hx8389b_zhuoershi_MSZ45126N50X3H_HSD_dsi_vdo_qhd_lcm_drv;
+extern LCM_DRIVER ili9488_HF_140391260_A0_IVO_mcu18_hvga_lcm_drv;
+extern LCM_DRIVER ili9488_UNIX23510600200_mcu18_hvga_lcm_drv;
+extern LCM_DRIVER ili9488_IJ0350CMO3501A_mcu18_hvga_lcm_drv;
+extern LCM_DRIVER rm68140_HF_140391226_A0_TM_mcu18_hvga_lcm_drv;
+extern LCM_DRIVER rm68140_HF_135350000_A0_LT_mcu18_hvga_lcm_drv;
+extern LCM_DRIVER rm68140_huarui_S1769A_HSD_mcu18_hvga_lcm_drv;
+extern LCM_DRIVER nt35510_huaxian_MS_HX402935W_A_BOE_mcu18_wvga_lcm_drv;
+extern LCM_DRIVER nt35510_hanshen_HS40121WVNS35_HYDIS_mcu18_wvga_lcm_drv;
+
+
+extern LCM_DRIVER ili9806c_haoshitong_HW397105_dsi_2_IVO_wvga_vdo_lcm_drv;
+
+extern LCM_DRIVER otm9605A_hengsheng_HS050PQ_76B_CPT_dsi_vdo_qhd_lcm_drv;
+extern LCM_DRIVER otm9605_hengsheng_HS050PQ_76H_CPT_dsi_vdo_qhd_lcm_drv;
+extern LCM_DRIVER otm9608A_hengsheng_HS050IL_71C_TM_dsi_vdo_qhd_lcm_drv;
+extern LCM_DRIVER otm8009a_hongsheng_HS4501118A_CMI_mcu18_fwvga_lcm_drv;
+
+extern LCM_DRIVER ili9806_hengsheng_HS045PK_02A_CMI_mcu18_fwvga_lcm_drv;
+extern LCM_DRIVER hx8389b_zhuoershi_MSZ60056N50X3H_A_HSD_dsi_vdo_qhd_lcm_drv;
+extern LCM_DRIVER otm9605_rixin_NST500QH2302ANJ_LG_dsi_vdo_qhd_lcm_drv;
+
+extern LCM_DRIVER hx8389b_chuanglaiya_KQX5006E12_JDI_dsi_vdo_qhd_lcm_drv;
+
+extern LCM_DRIVER otm9605a_aizuoertai_A50100N51HD_dsi_qhd_lcm_drv;
+extern LCM_DRIVER otm8018b_songrui_ST045FIM_BOB_CMI_dsi_vdo_2_fwvga_lcm_drv;
+extern LCM_DRIVER ili9806_azet_A45119N50HI_dsi_2_HSD_fwvga_vdo_lcm_drv;
+extern LCM_DRIVER ili9806E_QIJIA_QJ446008S0_HSD_dsi_2_vdo_fwvga_lcm_drv;
+
+
+
+extern LCM_DRIVER otm9605a_aizhuoertai_A50100N50HO_A_HSD_dsi_2_qhd_lcm_drv;
+extern LCM_DRIVER hx8389b_zhuoershi_MSZ47043N50X3H_A_HSD_dsi_2_vdo_qhd_lcm_drv;
+extern LCM_DRIVER RM68190_jingqi_JM466QH009_YOUDA_dsi_2_vdo_qhd_lcm_drv;
+extern LCM_DRIVER otm8018b_hansen_HS4549FWPC25_00_CMI_dsi_vdo_2_fwvga_lcm_drv;
+extern LCM_DRIVER ili9486L_HF_135390000_A0_HSD_mcu18_hvga_lcm_drv;
+extern LCM_DRIVER ili9806C_hengsheng_HS045PK_02E_dsi_vdo_fwvga_lcm_drv;
+extern LCM_DRIVER ili9806_APEX_A40269N50VIA_dsi_longteng_wvga_vdo_lcm_drv;
+extern LCM_DRIVER otm9605a_ykl_LP045CPTP182A_BOE_dsi_2_vdo_qhd_lcm_drv;
+extern LCM_DRIVER otm9605a_ykl_LP047APTP016A_AUO_dsi_2_qhd_lcm_drv;
+
+
+
+extern LCM_DRIVER nt35510_jinzhengyuan_JZY397P22C_HSD_mcu18_wvga_lcm_drv;
+extern LCM_DRIVER otm8012a_apex_MSA40271N50Q0A_CMI_dsi_2_wvga_lcm_drv;
+extern LCM_DRIVER ili9806c_apex_MSA40271N50QIA_dsi_2_CMI_wvga_vdo_lcm_drv;
+extern LCM_DRIVER RM68190_JIANMEIOU_JM466QH015_AUO_DSI_2_QHD_VDO_lcm_drv;
+
+
+extern LCM_DRIVER nt35510_feier_FTM397167A_HYDIS_mcu18_wvga_lcm_drv;
+
+extern LCM_DRIVER rm68180_feier_FTM397137A_CTC_mcu18_wvga_lcm_drv;
+extern LCM_DRIVER otm8018b_hongsheng_HS4501197A_CMI_dsi_vdo_2_fwvga_lcm_drv;
+extern LCM_DRIVER otm8018b_haoshitong_HF50QRA_BOE_dsi_vdo_2_fwvga_lcm_drv;
+extern LCM_DRIVER hx8389b_aizhuoertai_A45123N50QHA_CMI_dsi_2_vdo_qhd_lcm_drv;
+
+extern LCM_DRIVER otm9605_hansen_HS50101HSPC25_00_JDI_dsi_vdo_qhd_lcm_drv;
+extern LCM_DRIVER nt35517_hongsheng_HS466A_HSD_dsi_qhd_lcm_drv;
+extern LCM_DRIVER nt35517_rixin_NST446QH2305ANJ_CMI_dsi_qhd_lcm_drv;
+
+extern LCM_DRIVER ili9806c_azet_A40271N00VI_A_dsi_2_IVO_wvga_vdo_lcm_drv;
+extern LCM_DRIVER ili9806h_azet_A40271N01VI_A_dsi_2_IVO_wvga_vdo_lcm_drv;
+
+extern LCM_DRIVER rm68180_qicai_K40CM39_1238A_1N_BOE_mcu18_wvga_lcm_drv;
+
+extern LCM_DRIVER OTM9605A_YKL_LP060HPTP030A_HSD_DSI_VDO_lcm_drv;
+extern LCM_DRIVER RM68171_SONGRUI_ST040WOC_S71_CTC_DSI_2_WVGA_VDO_lcm_drv;
+
+extern LCM_DRIVER otm8018b_hongtao_HT45057A_V0_BOE_dsi_vdo_2_fwvga_lcm_drv;
+extern LCM_DRIVER HX8379A_AZET_A40271N51BH__BOE_DSI_2_qhd_VDO_WVGA_lcm_drv;
+extern LCM_DRIVER nt35517_hongsheng_HS5001204A_HSD_dsi_qhd_lcm_drv;
+
+extern LCM_DRIVER nt35517_tengsheng_HS5001204A_HDS_dsi_qhd_lcm_drv;
+extern LCM_DRIVER hx8389b_chuanglaiya_KQX4513E10_CMI_dsi_2_vdo_qhd_lcm_drv;
+
+extern LCM_DRIVER ili9806C_huarui_S1639A_dsi_vdo_fwvga_lcm_drv;
+
+extern LCM_DRIVER nt35517_hongsheng_HS466A_HSD_dsi_qhd_lcm_drv;
+
+extern LCM_DRIVER hx8369b_jingda_JM430WV020_AUO_dsi_2_wvga_lcm_drv;
+extern LCM_DRIVER RM68171_yihua_YH_397MD3902N0_CMI_DSI_2_WVGA_VDO_lcm_drv;
+
+extern LCM_DRIVER ili9806c_huaxian_dsi_2_vdo_fwvga_lcm_drv;
+
+extern LCM_DRIVER r61408_rixin_NST397WV3939AND_mcu18_LG_wvga_lcm_drv;
+extern LCM_DRIVER nt35510_jinzhengyuan_JZY397P22A_mcu18_BOE_wvga_lcm_drv;
+
+
+extern LCM_DRIVER otm9605a_ykl_LP047APTP025A_AUO_dsi_2_qhd_lcm_drv;
+extern LCM_DRIVER otm9605a_rixin_NST500QH2537ANJ_LG_dsi_2_vdo_qhd_lcm_drv;
+extern LCM_DRIVER otm8018b_suxian_S4013200A_BOE_dsi_2_vdo_wvga_lcm_drv;
+
+extern LCM_DRIVER hx8389b_hst_HQH5028_HSD_dsi_2_vdo_qhd_lcm_drv;
+extern LCM_DRIVER r61408_nisin_NST397WV3938ANP_V1_LG_mcu18_wvga_lcm_drv;
+extern LCM_DRIVER ili9486L_HF_13539_1281_A0_HSD_mcu18_hvga_lcm_drv;
+
+extern LCM_DRIVER otm8018b_yashu_YS397wv39_188a_BOE_dsi_2_wvga_lcm_drv;
+extern LCM_DRIVER nt35517_linlong_T47025M_HSD_dsi_qhd_lcm_dr;
+extern LCM_DRIVER nt35517_hongsheng_HS4661228A_HSD_dsi_qhd_lcm_drv;
+extern LCM_DRIVER hx8389b_lingrong_T468_07M_1017_15_TM_dsi_2_vdo_qhd_lcm_drv;
+extern LCM_DRIVER hx8389b_zuoershi_MSZ50244N50X2HA_dsi_2_vdo_qhd_lcm_drv;
+extern LCM_DRIVER otm9605a_rixin_LNST500QH0140_dsi_2_vdo_qhd_lcm_drv;
+extern LCM_DRIVER nt35517_linglong_WD540960G470T470_28M_HSD_dsi_qhd_lcm_drv;
+extern LCM_DRIVER otm8009a_nisin_NST397WV2312ANK_V1_CMI_dsi_2_wvga_lcm_drv;
+extern LCM_DRIVER nt35517_xinyonglong_XYL4789_HSD_dsi_qhd_lcm_drv;
+extern LCM_DRIVER hx8369b_liangjingjing_LT43062EHT01_BOE_dsi_wvga_lcm_drv;
+extern LCM_DRIVER hx8369b_liangjingjing_LT43062EHT01_72M_BOE_dsi_wvga_lcm_drv;
+
+extern LCM_DRIVER otm9608a_chaunglaiya_KQX5009E12_JDI_dsi_2_cmd_qhd_lcm_drv;
+extern LCM_DRIVER hx8389b_chuanglaiya_KQX5009E12_JDI_dsi_2_vdo_qhd_lcm_drv;
+extern LCM_DRIVER nt35510_hansen_dsi_2_vdo_wvga_lcm_drv;
+extern LCM_DRIVER otm9605_hansen_HS50101QHPC25_00_JDI_dsi_vdo_qhd_lcm_drv;
+extern LCM_DRIVER nt35510_xyl_xyl45124_mcu_fwvga_lcm_drv;
+extern LCM_DRIVER nt35517_lingrong_T47034_HSD_dsi_qhd_lcm_drv;
+extern LCM_DRIVER otm9605a_zhuoershi_HSD_dsi_2_qhd_lcm_drv;
+extern LCM_DRIVER RM68191_xingliangda_XLD0550110V1_25_IVO_dsi_2_vdo_qhd_lcm_drv;
+
+extern LCM_DRIVER otm9608a_azet_CMO_dsi_2_qhd_lcm_drv;
+extern LCM_DRIVER nt35517_hongsheng_HS5001222A_HSD_dsi_qhd_lcm_drv;
+extern LCM_DRIVER otm9605a_ykl_LP047APTP018A_V01_AUO_dsi_2_vdo_qhd_lcm_drv;
+extern LCM_DRIVER nt35512_yashu_YS450WV25_065B_BOE_vdo_fwvga_lcm_drv;
+extern LCM_DRIVER otm8018b_hongsheng_HS4501213A_BOE_dsi_vdo_2_fwvga_lcm_drv;
+extern LCM_DRIVER otm8018b_zhongguangdian_CMI_dsi_vdo_2_fwvga_lcm_drv;
+extern LCM_DRIVER otm9605a_rixin_NST500QH2542ANJ_V1_LG_dsi_2_vdo_qhd_lcm_drv;
+extern LCM_DRIVER hx8389b_zhuoershi_Z50244N50X2H_A_dsi_vdo_qhd_lcm_drv;
+extern LCM_DRIVER RM68191_guoxian_KD301_S49823_0381A_CTC_dsi_2_vdo_qhd_lcm_drv;
+extern LCM_DRIVER otm8009a_huanyutong_HY103970683128A99_HSD_dsi_2_wvga_lcm_drv;
+extern LCM_DRIVER nt35517_hongsheng_HS5001233A_HSD_dsi_qhd_lcm_drv;
+extern LCM_DRIVER otm8018b_hongsheng_HS4501213B_BOE_dsi_vdo_2_fwvga_lcm_drv;
+extern LCM_DRIVER otm8018b_dxgd_D500N3276V0_BOE_dsi_vdo_2_fwvga_lcm_drv;
+extern LCM_DRIVER RM68171_XINGGUANGXIN_SBR45FW029AN_BOE_DSI_2_FWVGA_VDO_lcm_drv;
+extern LCM_DRIVER nt35517_rixin_NST446QH2538ANJ_CMI_dsi_qhd_lcm_drv;
+extern LCM_DRIVER otm9605a_ykl_LP045APTP225A_AUO_dsi_2_vdo_qhd_lcm_drv;
+
+extern LCM_DRIVER SH1282_XINLIANGDA_XLD0402110B1_BOE_DSI_2_WVGA_lcm_drv;
+extern LCM_DRIVER ili9806h_HF_14539_1389_A0_BOE_mcu18_fwvga_lcm_drv;
+extern LCM_DRIVER ili9806h_yixinda_Y83423_BOE_mcu18_wvga_lcm_drv;
+extern LCM_DRIVER otm9605A_hongtao_HT498127A_V0_CPT_dsi_qhd_lcm_drv;
+extern LCM_DRIVER otm9605a_rixin_NST500QH2543ANJ_V1_LG_dsi_2_vdo_qhd_lcm_drv;
+extern LCM_DRIVER otm8009a_suxian_S4014400B_BOE_dsi_2_wvga_lcm_drv;
+extern LCM_DRIVER RM68171_XINGLIANGDA_XLD0450790B1_25_BOE_DSI_2_FWVGA_VDO_lcm_drv;
+extern LCM_DRIVER otm9605a_datong_DT55005A_AUO_dsi_2_qhd_lcm_drv;
+extern LCM_DRIVER otm9605a_ykl_LP045APTP203A_AUO_dsi_2_vdo_qhd_lcm_drv;
+extern LCM_DRIVER OTM8012A_RIXINDA_Y83243_BOE_MCU18_WVGA_lcm_drv;
+extern LCM_DRIVER otm8012a_yashu_YS397WV39_197A_BOE_mcu24_wvga_lcm_drv;
+extern LCM_DRIVER otm9605a_ykl_LP050FPTP179A_CTC_dsi_2_vdo_qhd_lcm_drv;
+extern LCM_DRIVER otm9605a_hengsheng_HS050PQ_81C_CPT_dsi_2_vdo_qhd_lcm_drv;
+extern LCM_DRIVER hx8389b_unix_UT54001A0_00_IVO_dsi_2_vdo_qhd_lcm_drv;
+extern LCM_DRIVER nt35517_xingliangda_HSD050FMW2D_HSD_dsi_2_vdo_qhd_lcm_drv;
+extern LCM_DRIVER hx8357c_helitai_QTB3D5122_A0_HSD_dsi_cmd_hvga_lcm_drv;
+extern LCM_DRIVER otm8009a_huayu_UD0087KP040_IVO_dsi_2_wvga_lcm_drv;
+extern LCM_DRIVER nt35510_suxian_S4014400A_HSD_dsi_2_wvga_lcm_drv;
+extern LCM_DRIVER otm9605a_hongsheng_HS4501276A_CMI_dsi_2_vdo_qhd_lcm_drv;
+extern LCM_DRIVER OTM9605A_HENGSHENG_HS055PQ_02C_IVO_DSI_2_VDO_QHD_lcm_drv;
+extern LCM_DRIVER nt35510_chuanglaiyake_KX4047D8L0_L_BOE_mcu18_wvga_lcm_drv;
+extern LCM_DRIVER otm8018b_yashu_YS397WV25_195A_BOE_dsi_2_wvga_lcm_drv;
+extern LCM_DRIVER ili9806c_apex_A40271N32VI_dsi_2_IVO_wvga_cmd_lcm_drv;
+extern LCM_DRIVER nt35510_yixuntong_BOE_mcu18_wvga_lcm_drv;
+extern LCM_DRIVER otm8009_jingtai_JTD040347S_HSD_WVGA_MCU18_lcm_drv;
+extern LCM_DRIVER nt35516_rixin_NST446QH2538BNK_CMO_dsi_qhd_lcm_drv;
+extern LCM_DRIVER nt35510_rixin_mcu18_wvga_lcm_drv;
+extern LCM_DRIVER otm8009a_nisin_LN8T397WV0249_CMI_dsi_2_wvga_lcm_drv;
+extern LCM_DRIVER ili9806_CMS5106TRKSZ2_dsi_2_BOE_wvga_lcm_drv;
+extern LCM_DRIVER rm68180_yashu_YS450WV25_065D_BOE_dsi_cmd_fwvga_lcm_drv;
+extern LCM_DRIVER otm8018b_haoshitong_HW397148QRD_HSD_dsi_2_wvga_lcm_drv;
+extern LCM_DRIVER rm68180_jiusheng_JST397C_CTC_dsi_2_vdo_wvga_lcm_drv;
+extern LCM_DRIVER otm8009a_haoshitong_HW397130_HSD_dsi_2_cmd_wvga_lcm_drv;
+extern LCM_DRIVER otm9605_hengsheng_HS055PQ_03C_CPT_dsi_vdo_qhd_lcm_drv;
+extern LCM_DRIVER RM68180_XINGLIANGDA_XLD0450790B1_BOE_DSI_FWVGA_lcm_drv;
+extern LCM_DRIVER otm8009a_apex_A40305N00VO_IVO_dsi_2_wvga_lcm_drv;
+extern LCM_DRIVER otm8009a_apex_A45147N50HN_HSD_dsi_2_cmd_fwvga_lcm_drv;
+extern LCM_DRIVER otm8009a_wanchanglong_W501298AAA_BOE_dsi_2_cmd_fwvga_lcm_drv;
+extern LCM_DRIVER otm8009a_fair_FTM44660B_BOE_dsi_2_cmd_fwvga_lcm_drv;
+extern LCM_DRIVER ili9806_HS045NK_35B_dsi_2_HUAYIN_wvga_cmd_lcm_drv;
+extern LCM_DRIVER otm9605a_yaxinwei_YXW55103C25_AUO_dsi_2_qhd_lcm_drv;
+extern LCM_DRIVER rm68171_xinliangda_XLD0450860B1_25_BOE_dsi_2_fwvga_vdo_lcm_drv;
+extern LCM_DRIVER hx8357d_apex_A35406N00QH_A_CMI_dsi_cmd_hvga_lcm_drv;
+extern LCM_DRIVER hx8357d_chuanma_CMS5102TRKSZ2_BOE_dsi_2_cmd_hvga_lcm_drv;
+extern LCM_DRIVER ili9806c_chuanglaiya_KV4075C8_L0_dsi_2_CPT_wvga_cmd_lcm_drv;
+extern LCM_DRIVER ili9806_JX397001SO_dsi_HSD_wvga_cmd_lcm_drv;
+extern LCM_DRIVER ili9806_qijia_JX446003S0_CD_HSD_mcu18_fwvga_lcm_drv;
+extern LCM_DRIVER ili9806_zhongguangdian_M3401_HSD_mcu18_fwvga_lcm_drv;
+extern LCM_DRIVER ili9806E_HENGSHENG_HS045NK_35A_CPT_dsi_2_vdo_fwvga_lcm_drv;
+extern LCM_DRIVER otm8009a_jingtai_JTD040347B1_BOE_dsi_2_wvga_lcm_drv;
+extern LCM_DRIVER nt35510_SJGD_SJWV40N0250A_BOE_dsi_2_wvga_lcm_drv;
+extern LCM_DRIVER nt35517_jinman_SF_TC498H_9939A_HSD_dsi_qhd_lcm_drv;
+extern LCM_DRIVER RM68171_XINGLIANGDA_XLD0450790B1_25_BOE_DSI_2_FWVGA_VDO_72M_015_lcm_drv;
+extern LCM_DRIVER NT35516_rixin_NSF446QH3915_CMO_MCU18_qhd_lcm_drv;
+extern LCM_DRIVER ili9806_A40318N50BI_dsi_BOE_wvga_cmd_lcm_drv;
+extern LCM_DRIVER otm8009a_haoshitong_HF4588_BOE_mcu18_fwvga_lcm_drv;
+extern LCM_DRIVER ili9806E_XIANGLONG_XT4502510PL_dsi_2_vdo_fwvga_lcm_drv;
+extern LCM_DRIVER nt35512_XIANGLONG_XT4502510PL_dsi_2_vdo_fwvga_lcm_drv;
+extern LCM_DRIVER otm9605_XYL50119_LG_dsi_2_qhd_lcm_drv;
+extern LCM_DRIVER ili9806e_chuanma_CMS51061TRKSZ2_BOE_dsi_2_vdo_wvga_lcm_drv;
+extern LCM_DRIVER ILI9806E_XINYONGLONG_XYL45222_CMO_dsi_2_vdo_fwvga_lcm_drv;
+
+extern LCM_DRIVER nt35517_xingliangda_XLD0500940L1_25_LG_dsi_2_vdo_qhd_lcm_drv;
+extern LCM_DRIVER RM68171_HUANYUTONG_HY_103970683_HSD_DSI_2_WVGA_VDO_lcm_drv;
+extern LCM_DRIVER ili9806E_CHUANGLAIYA_KV4075C8L1_IVO_dsi_2_vdo_wvga_lcm_drv;
+extern LCM_DRIVER ili9806E_hansen_HS40175WVNC300_HSD_dsi_2_vdo_wvga_lcm_drv;
+extern LCM_DRIVER nt35510_HONGSHENG_HS4501310A_BOE_mcu18_fwvga_lcm_drv;
+extern LCM_DRIVER otm8018b_hansen_HS50166FWNC39_00_BOE_dsi_vdo_2_fwvga_lcm_drv;
+extern LCM_DRIVER nt35512_shengjiguangdian_SJWV40N0247B0_HSD_vdo_wvga_lcm_drv;
+extern LCM_DRIVER ili9806E_JINGTAI_JTD040347S3_HSD_dsi_2_vdo_wvga_lcm_drv;
+extern LCM_DRIVER nt35517_hansen_HS50139QHNC25_CPT_dsi_2_vdo_qhd_lcm_drv;
+extern LCM_DRIVER ili9806_aizhuoertai_IPS_dsi_wvga_cmd_lcm_drv;
+extern LCM_DRIVER RM68171_zhuoershi_Z40252N00I4OMA_BOE_DSI_2_WVGA_VDO_lcm_drv;
+extern LCM_DRIVER nt35517_xingliangda_XLD0500980L1_25_LG_dsi_2_vdo_qhd_lcm_drv;
+extern LCM_DRIVER nt35512_shengji_SJFW45N0257_BOE_vdo_fwvga_lcm_drv;
+extern LCM_DRIVER otm8018b_jingtai_JTD0450XXC0_CMI_dsi_vdo_2_fwvga_lcm_drv;
+extern LCM_DRIVER otm8019a_huayu_UD0102KP040B_IVO_dsi_vdo_2_wvga_lcm_drv;
+extern LCM_DRIVER otm8018b_PUNAI_PT040WVH010A_HSD_dsi_2_wvga_lcm_drv;
+extern LCM_DRIVER SH1282_TUOPU_T40WV25BN003_BOE_DSI_2_WVGA_lcm_drv;
+extern LCM_DRIVER SH1282_shengji_SJWV40N0247C0_IVO_DSI_2_WVGA_lcm_drv;
+extern LCM_DRIVER ili9806E_kelai_KF4534D10L0Y_CPT_dsi_2_vdo_fwvga_lcm_drv;
+extern LCM_DRIVER RM68171_zhuoershi_Z45180N00I4_IVO_dsi_2_vdo_fwvga_lcm_drv;
+extern LCM_DRIVER otm9605a_hongsheng_HS4501360A_CMI_dsi_2_vdo_qhd_lcm_drv;
+
+extern LCM_DRIVER  otm9605a_ykl_LP047HPTP056A_HSD_dsi_2_qhd_lcm_drv;
+extern LCM_DRIVER  ili9806e_hengsheng_HS040NH06D_BOE_dsi_2_vdo_wvga_lcm_drv;
+extern LCM_DRIVER otm8018b_ykl_LP050CPYP243A_CMI_dsi_vdo_2_fwvga_lcm_drv;
+extern LCM_DRIVER otm8018b_qingbang_HQH5035_BOE_dsi_vdo_2_fwvga_lcm_drv;
+extern LCM_DRIVER otm8018b_apex_A45147N52H0_HSD_dsi_2_fwvga_lcm_drv;
+extern LCM_DRIVER nt35512_apex_MSA45119N50BN_BOE_dsi_2_vdo_fwvga_lcm_drv;
+extern LCM_DRIVER otm8018b_punai_PT040WVB010B_BOE_dsi_2_wvga_lcm_drv;
+extern LCM_DRIVER nt35310_huarui_S1769_tianma_mcu18_hvga_lcm_drv;
+extern LCM_DRIVER ili9806e_jingtai_JTD040379B0_BOE_dsi_2_vdo_wvga_lcm_drv;
+extern LCM_DRIVER ili9806E_JINGTAI_JTD045047S0_HSD_dsi_2_vdo_fwvga_lcm_drv;
+extern LCM_DRIVER ili9806E_apex_A50177N50BI_BOE_dsi_2_vdo_fwvga_lcm_drv;
+extern LCM_DRIVER ili9806E_APEX_A50182N50BIA_BOE_dsi_2_vdo_fwvga_lcm_drv;
+extern LCM_DRIVER otm8018b_hongsheng_HS5001333A_BOE_dsi_vdo_2_fwvga_lcm_drv;
+extern LCM_DRIVER otm9605a_ruixin_RX_466OTM_977A_AUO_dsi_vdo_qhd_lcm_drv;
+extern LCM_DRIVER ili9806e_apex_A40318N31BI_BOE_dsi_2_vdo_wvga_lcm_drv;
+extern LCM_DRIVER otm8018b_apex_A40305N01VO_IVO_dsi_2_vdo_wvga_lcm_drv;
+extern LCM_DRIVER HX8379C_KELAI_KFX5027E12L0EL_BOE_DSI_2_VDO_FWVGA_lcm_drv;
+extern LCM_DRIVER ili9806E_wanchanglong_W50137AAA_HSD_dsi_2_vdo_fwvga_lcm_drv;
+extern LCM_DRIVER otm8019a_haifei_HF150391609A0_HSD_dsi_vdo_2_fwvga_lcm_drv;
+extern LCM_DRIVER ili9806E_jingtai_JTD050096S0_HSD_dsi_2_vdo_fwvga_lcm_drv;
+extern LCM_DRIVER otm9605a_ykl_LP047HPTP042A_HSD_dsi_2_qhd_lcm_drv;
+extern LCM_DRIVER otm8019a_HF_14025_1626_A0_BOE_dsi_vdo_2_wvga_lcm_drv;
+extern LCM_DRIVER ili9806e_HF_14025_0000_A0_BOE_dsi_2_vdo_wvga_lcm_drv;
+extern LCM_DRIVER ili9806E_jingtai_JTD040379S1_IVO_dsi_2_vdo_wvga_lcm_drv;
+extern LCM_DRIVER OTM8018B_KEYUDA_KP050BPF009A_BOE_FWVGA_VEDIO_lcm_drv;
+extern LCM_DRIVER ILI9806E_JINGCHUANG_A50182N50BIA_BOE_DSI_2_VDO_FWVGA_lcm_drv;
+extern LCM_DRIVER ili9806e_jcr_JC4955016B0_BOE_dsi_2_vdo_fwvga_lcm_drv;
+extern LCM_DRIVER hx8379C_kelai_KFX4504E10_BOE_dsi_2_vdo_fwvga_lcm_drv;
+extern LCM_DRIVER ili9806E_jingtai_JTD050097B0_BOE_dsi_2_vdo_fwvga_lcm_drv;
+extern LCM_DRIVER nt35512_hongsheng_HS5001359A_BOE_dsi_2_vdo_fwvga_lcm_drv;
+extern LCM_DRIVER ili9806E_JINGTAI_JTD040380B0_HSD_dsi_2_vdo_wvga_lcm_drv;
+extern LCM_DRIVER OTM9605A_MINGZE_MZ5D0N021_BOE_DSI_2_VDO_QHD_lcm_drv;
+extern LCM_DRIVER SH1282_TIANZHI_PT040WVH010A_IVO_DSI_2_WVGA_lcm_drv;
+extern LCM_DRIVER RM68140_JINPING_JP35H038B0_CMI_MCU18_HVGA_lcm_drv;
+extern LCM_DRIVER HX8379C_KELAI_KV4085C8_IVO_DSI_2_VDO_WVGA_lcm_drv;
+extern LCM_DRIVER nt35517_linglong_T470_25M_HSD_dsi_2_vdo_qhd_lcm_drv;
+extern LCM_DRIVER otm8019a_zhuershi_Z40282N00B4O_BOE_dsi_vdo_2_wvga_lcm_drv;
+extern LCM_DRIVER ili9806e_dezhixin_Y83466_BOE_dsi_2_vdo_wvga_lcm_drv;
+extern LCM_DRIVER RM68171_QICAI_K40CM231613A1N_CMI_DSI_2_WVGA_VDO_lcm_drv;
+extern LCM_DRIVER RM68171_QICAI_K40BM231423A1N_BOE_DSI_2_WVGA_VDO_lcm_drv;
+extern LCM_DRIVER FL10802A_HUAYU_UD0164KQ045_IVO_FWVGA_DSI_VDO_lcm_drv;
+extern LCM_DRIVER otm8018b_datong_DT50118A_IVO_dsi_2_vdo_fwvga_lcm_drv;
+extern LCM_DRIVER hx8389b_xinliangda_Z66_BOE_dsi_2_qhd_lcm_drv;
+extern LCM_DRIVER ILI9488_QIJIA_FX350001S0_HSD_DSI_CMD_HVGA_lcm_drv;
+extern LCM_DRIVER ili9488_TU400_mcu18_hvga_lcm_drv;
+extern LCM_DRIVER otm8019a_zhuoershi_MS_Z50439N00B3O_BOE_dsi_vdo_2_fwvga_lcm_drv;
+extern LCM_DRIVER hx8369b_XINSHENGHUA_SH43N_025V0F_AUO_dsi_2_wvga_lcm_drv;
+extern LCM_DRIVER RM68171_XINGUANGXIN_SSR40WV099AN_CTC_DSI_2_WVGA_VDO_lcm_drv;
+extern LCM_DRIVER ILI9806E_HANSEN_HS40186WVNS23_BOE_DSI_2_VDO_WVGA_lcm_drv;
+extern LCM_DRIVER ili9806E_apex_A50177N50BI_W508F_BOE_dsi_2_vdo_fwvga_lcm_drv;
+extern LCM_DRIVER HX8379C_KELAI_KFX5027E12L0EL_W508F_BOE_DSI_2_VDO_FWVGA_lcm_drv;
+extern LCM_DRIVER hx8379c_daxian_D500N3323V0_BOE_dsi_2_vdo_fwvga_lcm_drv;
+
+extern LCM_DRIVER otm9605a_ruixin_RX_470OTM_977A_HSD_dsi_vdo_qhd_lcm_drv;
+extern LCM_DRIVER hx8379c_chuanglaiya_KV4075C8_IVO_dsi_vdo_wvga_lcm_drv;
+extern LCM_DRIVER RM68171_HUANYUTONG_HY105000604_HSD_DSI_2_FWVGA_VDO_lcm_drv;
+extern LCM_DRIVER hx8369b_jingda_new_JM430WV037_AU_dsi_2_wvga_lcm_drv;
+
+extern LCM_DRIVER ili9806E_jingtai_JTD050121S0_HSD_dsi_2_vdo_fwvga_lcm_drv;
+extern LCM_DRIVER ili9806e_dsi_vdo_fwvga_drv;
+extern LCM_DRIVER ili9806e_wvga_dsi_vdo_txd_drv;
+extern LCM_DRIVER hx8379a_dsi_vdo_azet_ips_lcm_drv;
+extern LCM_DRIVER hx8379a_6572_dsi_vdo_lcm_drv;
+LCM_DRIVER* lcm_driver_list[] = 
+
+{ 
+	
+#if defined(ILI9806E_JINGTAI_JTD050121S0_HSD_DSI_2_VDO_FWVGA)
+	&ili9806E_jingtai_JTD050121S0_HSD_dsi_2_vdo_fwvga_lcm_drv,
+#endif
+
+#if defined(ILI9488_QIJIA_FX350001S0_HSD_DSI_CMD_HVGA)
+	&ILI9488_QIJIA_FX350001S0_HSD_DSI_CMD_HVGA_lcm_drv,
+#endif
+
+#if defined(ILI9488_TU400_MCU18_HVGA)
+	&ili9488_TU400_mcu18_hvga_lcm_drv,
+#endif
+
+		#if defined(FL10802A_HUAYU_UD0164KQ045_IVO_FWVGA_DSI_VDO)
+				&FL10802A_HUAYU_UD0164KQ045_IVO_FWVGA_DSI_VDO_lcm_drv,
+#endif
+
+#if defined(OTM9605_XYL50119_LG_DSI_2_QHD)
+			&otm9605_XYL50119_LG_dsi_2_qhd_lcm_drv,
+#endif
+
+#if defined(NT35512_XIANGLONG_XT4502510PL_DSI_2_VDO_FWVGA)
+											&nt35512_XIANGLONG_XT4502510PL_dsi_2_vdo_fwvga_lcm_drv,
+#endif
+
+#if defined(ILI9806E_XIANGLONG_XT4502510PL_DSI_2_VDO_FWVGA)
+										&ili9806E_XIANGLONG_XT4502510PL_dsi_2_vdo_fwvga_lcm_drv,
+#endif	
+#if defined(ILI9806_A40318N50BI_DSI_BOE_WVGA_CMD)
+		&ili9806_A40318N50BI_dsi_BOE_wvga_cmd_lcm_drv,
+#endif	
+
+#if defined(NT35516_RIXIN_NSF446QH3915_CMO_MCU18_QHD)
+	&NT35516_rixin_NSF446QH3915_CMO_MCU18_qhd_lcm_drv,
+#endif	
+
+#if defined(ILI9806_JX397001SO_DSI_HSD_WVGA_CMD)
+									&ili9806_JX397001SO_dsi_HSD_wvga_cmd_lcm_drv,
+#endif	
+	
+
+#if defined(ILI9806_HS045NK_35B_DSI_2_HUAYIN_WVGA_CMD)
+								&ili9806_HS045NK_35B_dsi_2_HUAYIN_wvga_cmd_lcm_drv,
+#endif	
+
+#if defined(ILI9806_CMS5106TRKSZ2_DSI_2_BOE_WVGA)
+								&ili9806_CMS5106TRKSZ2_dsi_2_BOE_wvga_lcm_drv,
+#endif	
+
+#if defined(OTM9605A_DATONG_DT55005A_AUO_DSI_2_QHD)
+								&otm9605a_datong_DT55005A_AUO_dsi_2_qhd_lcm_drv,
+#endif	
+
+
+#if defined(ILI9806H_YIXINDA_Y83423_BOE_MCU18_WVGA)
+							&ili9806h_yixinda_Y83423_BOE_mcu18_wvga_lcm_drv,
+#endif
+
+
+#if defined(NT35517_LINGRONG_T47034_HSD_DSI_QHD)
+					&nt35517_lingrong_T47034_HSD_dsi_qhd_lcm_drv,
+#endif
+
+#if defined(NT35517_LINLONG_T47025M_HSD_DSI_QHD)
+			&nt35517_linlong_T47025M_HSD_dsi_qhd_lcm_drv,
+#endif
+
+#if defined(OTM9605A_RIXIN_NST500QH2537ANJ_LG_DSI_2_VDO_QHD)
+							&otm9605a_rixin_NST500QH2537ANJ_LG_dsi_2_vdo_qhd_lcm_drv,
+#endif	
+
+#if defined(OTM9605A_RIXIN_LNST500QH0140_DSI_2_VDO_QHD)
+							&otm9605a_rixin_LNST500QH0140_dsi_2_vdo_qhd_lcm_drv,
+#endif	
+
+#if defined(OTM9605A_YKL_LP047APTP025A_AUO_DSI_2_QHD)
+	&otm9605a_ykl_LP047APTP025A_AUO_dsi_2_qhd_lcm_drv,
+#endif
+
+
+#if defined(OTM9605A_YKL_LP045APTP182A_AUO_DSI_2_QHD)
+						&otm9605a_ykl_LP045APTP182A_AUO_dsi_2_qhd_lcm_drv,
+#endif	
+
+#if defined(OTM9605A_YKL_LP045CPTP182A_BOE_DSI_2_VDO_QHD)
+						&otm9605a_ykl_LP045CPTP182A_BOE_dsi_2_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(OTM9605A_YKL_LP060HPTP023A_HSD_DSI_2_QHD)
+					&otm9605a_ykl_LP060HPTP023A_HSD_dsi_2_qhd_lcm_drv,
+#endif	
+
+
+#if defined(HX8389B_ZUOERSHI_MSZ60038N50X3H_HSD_DSI_2_VDO_QHD)
+				&hx8389b_zuoershi_MSZ60038N50X3H_HSD_dsi_2_vdo_qhd_lcm_drv,
+#endif	
+
+#if defined(HX8389B_ZUOERSHI_MSZ50244N50X2HA_DSI_2_VDO_QHD)
+				&hx8389b_zuoershi_MSZ50244N50X2HA_dsi_2_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(HX8389B_ZUOERSHI_MSZ70012N50X3H_IVO_DSI_2_VDO_QHD)
+				&hx8389b_zuoershi_MSZ70012N50X3H_IVO_dsi_2_vdo_qhd_lcm_drv,
+#endif	
+
+
+#if defined(OTM8018B_HUANYUTONG_HY105000604_HSD_DSI_2_FWVGA)
+			&otm8018b_huanyutong_HY105000604_vdo_fwvga_lcm_drv,
+#endif	
+
+#if defined(OTM8018B_SONGRUI_ST045FIM_BOB_CMI_DSI_VDO_2_FWVGA)
+			&otm8018b_songrui_ST045FIM_BOB_CMI_dsi_vdo_2_fwvga_lcm_drv,
+#endif	
+
+#if defined(OTM8018B_HANSEN_HS4549FWPC25_00_CMI_DSI_VDO_2_FWVGA)
+			&otm8018b_hansen_HS4549FWPC25_00_CMI_dsi_vdo_2_fwvga_lcm_drv,
+#endif	
+
+#if defined(ILI9806_YIHUA_DSI_FWVGA)
+		&ili9806_yihua_dsi_fwvga_lcm_drv,
+#endif	
+
+#if defined(ILI9806_HAIFEI_HF146391253B0_HSD_MCU18_FWVGA)
+		&ili9806_haifei_HF146391253B0_HSD_mcu18_fwvga_lcm_drv,
+#endif	
+
+#if defined(NT35512_HANSHENG_HS5053FWNC25_VDO_FWVGA)
+		&nt35512_hansheng_hs5053fwnc25_vdo_fwvga_lcm_drv,
+#endif	
+#if defined(OTM9605A_YKL_DSI_VDO_QHQ)
+		&otm9605A_ykl_dsi_vdo_qhq_lcm_drv,
+#endif	
+
+#if defined(OTM9605A_YKL_LP045CPTP174A_AUO_DSI_2_VDO_QHD)
+	&otm9605a_ykl_LP045CPTP174A_AUO_dsi_2_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(OTM9605A_SUXIAN_S5001800A_BOE_DSI_2_QHD)
+	&otm9605a_suxian_S5001800A_BOE_dsi_2_qhd_lcm_drv,
+#endif
+
+#if defined(OTM9608A_DAXIAN_D450N3178VO_TIANMA_DSI_2_QHD)
+		&otm9608a_daxian_D450N3178VO_TIANMA_dsi_2_qhd_lcm_drv,
+#endif	
+
+#if defined(OTM9605A_YASHU_YS500QH39_047A_CPT_DSI_2_VDO_QHD)
+		&otm9605a_yashu_YS500QH39_047A_CPT_dsi_2_vdo_qhd_lcm_drv,
+#endif	
+
+#if defined(HX8369)
+	&hx8369_lcm_drv,
+#endif
+
+#if defined(HX8369_6575)
+	&hx8369_6575_lcm_drv,
+#endif
+
+#if defined(BM8578)
+	&bm8578_lcm_drv,
+#endif
+
+#if defined(NT35582_MCU)
+	&nt35582_mcu_lcm_drv,
+#endif
+
+#if defined(OTM8081B_HONGTAO_HJ4981BA_VDO_FWVGA)
+		&otm8081b_hongtao_HJ4981BA_vdo_fwvga_lcm_drv,
+#endif
+#if defined(OTM9605A_YKL_DSI_VDO_QHD)
+   &otm9605A_ykl_dsi_vdo_qhd_lcm_drv,
+#endif
+
+
+#if defined(NT35582_MCU_6575)
+	&nt35582_mcu_6575_lcm_drv,
+#endif
+
+#if defined(NT35590_HD720_DSI_VDO_TRULY)
+	&nt35590_hd720_dsi_vdo_truly_lcm_drv, 
+#endif
+
+#if defined(SSD2075_HD720_DSI_VDO_TRULY)
+	&ssd2075_hd720_dsi_vdo_truly_lcm_drv, 
+#endif
+
+#if defined(NT35590_HD720_DSI_CMD)
+	&nt35590_hd720_dsi_cmd_drv,
+#endif
+
+#if defined(NT35590_HD720_DSI_CMD_AUO)
+	&nt35590_hd720_dsi_cmd_auo_lcm_drv,
+#endif
+
+#if defined(NT35590_HD720_DSI_CMD_AUO_QHD)
+	&nt35590_hd720_dsi_cmd_auo_qhd_lcm_drv,
+#endif
+
+#if defined(NT35590_HD720_DSI_CMD_AUO_FWVGA)
+	&nt35590_hd720_dsi_cmd_auo_fwvga_lcm_drv,
+#endif
+
+#if defined(NT35590_HD720_DSI_CMD_CMI)
+	&nt35590_hd720_dsi_cmd_cmi_lcm_drv,
+#endif
+
+#if defined(R63302_SHARP_LS035Y8DX02A_RGB_WVGA)
+	&r63302_sharp_LS035Y8DX02A_rgb_wvga_lcm_drv,
+#endif
+
+#if defined(NT35582_RGB_6575)
+	&nt35582_rgb_6575_lcm_drv,
+#endif
+
+#if defined(HX8369_RGB_6585_FPGA)
+	&hx8369_rgb_6585_fpga_lcm_drv,
+#endif
+
+#if defined(HX8369_RGB_6572)
+	&hx8369_rgb_6572_lcm_drv,
+#endif
+
+#if defined(HX8369_RGB_6572_FPGA)
+	&hx8369_rgb_6572_fpga_lcm_drv,
+#endif
+
+#if defined(HX8369_MCU_6572)
+	&hx8369_mcu_6572_lcm_drv,
+#endif
+
+#if defined(HX8369A_WVGA_DSI_CMD)
+	&hx8369a_wvga_dsi_cmd_drv,
+#endif
+
+#if defined(HX8369A_WVGA_DSI_VDO)
+	&hx8369a_wvga_dsi_vdo_drv,
+#endif
+
+#if defined(HX8357B)
+	&hx8357b_lcm_drv,
+#endif
+
+#if defined(HX8357C_HVGA_DSI_CMD)
+	&hx8357c_hvga_dsi_cmd_drv,
+#endif
+
+#if defined(R61408)
+	&r61408_lcm_drv,
+#endif
+
+#if defined(R61408_WVGA_DSI_CMD)
+	&r61408_wvga_dsi_cmd_drv,
+#endif
+
+#if defined(HX8369_DSI_VDO)
+	&hx8369_dsi_vdo_lcm_drv,
+#endif
+
+#if defined(HX8369_DSI)
+	&hx8369_dsi_lcm_drv,
+#endif
+
+#if defined(HX8369_6575_DSI)
+	&hx8369_dsi_6575_lcm_drv,
+#endif
+
+#if defined(HX8369_6575_DSI_NFC_ZTE)
+	&hx8369_dsi_6575_lcm_drv,
+#endif
+
+#if defined(HX8369_6575_DSI_HVGA)
+	&hx8369_dsi_6575_hvga_lcm_drv,
+#endif
+
+#if defined(HX8369_6575_DSI_QVGA)
+	&hx8369_dsi_6575_qvga_lcm_drv,
+#endif
+
+#if defined(HX8369_HVGA)
+	&hx8369_hvga_lcm_drv,
+#endif
+
+#if defined(NT35510)
+	&nt35510_lcm_drv,
+#endif
+
+#if defined(NT35510_RGB_6575) 
+	&nt35510_dpi_lcm_drv,
+#endif	
+
+#if defined(NT35510_HVGA)
+	&nt35510_hvga_lcm_drv,
+#endif
+
+#if defined(NT35510_QVGA)
+	&nt35510_qvga_lcm_drv,
+#endif
+
+#if defined(NT35510_WVGA_DSI_CMD)
+	&nt35510_wvga_dsi_cmd_drv,
+#endif
+
+#if defined(NT35517_LIKEN_HT8459RKF_DSI_QHD)
+	&nt35517_liken_HT8459RKF_dsi_qhd_lcm_drv,
+#endif
+
+#if defined(NT35510_6517)
+	&nt35510_6517_lcm_drv,
+#endif
+
+#if defined(NT35510_DSI_CMD_6572)
+	&nt35510_dsi_cmd_6572_drv,
+#endif
+
+#if defined(NT35510_DSI_CMD_6572_HVGA)
+	&nt35510_dsi_cmd_6572_hvga_drv,
+#endif
+
+#if defined(NT35510_DSI_CMD_6572_FWVGA)
+	&nt35510_dsi_cmd_6572_fwvga_drv,
+#endif
+
+#if defined(NT35510_DSI_VDO_6572)
+	&nt35510_dsi_vdo_6572_drv,
+#endif
+
+#if defined(NT35510_MCU_6572)
+	&nt35510_mcu_6572_lcm_drv,
+#endif
+
+#if defined(ILI9481)
+	&ili9481_lcm_drv,
+#endif
+
+
+
+#if defined(NT35582)
+	&nt35582_lcm_drv,
+#endif
+
+#if defined(S6D0170)
+	&s6d0170_lcm_drv,
+#endif
+
+#if defined(SPFD5461A)
+	&spfd5461a_lcm_drv,
+#endif
+
+#if defined(TA7601)
+	&ta7601_lcm_drv,
+#endif
+
+#if defined(TFT1P3037)
+	&tft1p3037_lcm_drv,
+#endif
+
+#if defined(HA5266)
+	&ha5266_lcm_drv,
+#endif
+
+#if defined(HSD070IDW1)
+	&hsd070idw1_lcm_drv,
+#endif
+
+#if defined(HX8363_6575_DSI)
+	&hx8363_6575_dsi_lcm_drv,
+#endif
+
+#if defined(HX8363_6575_DSI_HVGA)
+	&hx8363_6575_dsi_hvga_lcm_drv,
+#endif
+
+#if defined(HX8363B_WVGA_DSI_CMD)
+	&hx8363b_wvga_dsi_cmd_drv,
+#endif
+
+#if defined(LG4571)
+	&lg4571_lcm_drv,
+#endif
+
+#if defined(LG4573B_WVGA_DSI_VDO_LH430MV1)
+	&lg4573b_wvga_dsi_vdo_lh430mv1_drv,
+#endif
+
+#if defined(LVDS_WSVGA)
+	&lvds_wsvga_lcm_drv,
+#endif
+
+#if defined(LVDS_WSVGA_TI)
+	&lvds_wsvga_ti_lcm_drv,
+#endif
+
+#if defined(LVDS_WSVGA_TI_N)
+	&lvds_wsvga_ti_n_lcm_drv,
+#endif
+
+#if defined(NT35565_3D)
+	&nt35565_3d_lcm_drv,
+#endif
+
+#if defined(TM070DDH03)
+	&tm070ddh03_lcm_drv,
+#endif
+#if defined(R63303_IDISPLAY)
+	&r63303_idisplay_lcm_drv,
+#endif
+
+#if defined(HX8369B_DSI_VDO)
+	&hx8369b_dsi_vdo_lcm_drv,
+#endif
+
+#if defined(HX8369B_WVGA_DSI_VDO)
+	&hx8369b_wvga_dsi_vdo_drv,
+#endif
+
+#if defined(HX8369B_QHD_DSI_VDO)
+	&hx8389b_qhd_dsi_vdo_drv,
+#endif
+
+#if defined(HX8389B_KELAI_DSI_VDO_QHD)
+	&hx8389b_kelai_dsi_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(GN_SSD2825_SMD_S6E8AA)
+	&gn_ssd2825_smd_s6e8aa,
+#endif
+#if defined(HX8369_TM_DSI)
+	&hx8369_dsi_tm_lcm_drv,
+#endif
+
+#if defined(HX8369_BLD_DSI)
+	&hx8369_dsi_bld_lcm_drv,
+#endif
+
+#if defined(HJ080IA)
+	&hj080ia_lcm_drv,
+#endif
+
+#if defined(HJ101NA02A)
+	&hj101na02a_lcm_drv,
+#endif
+
+#if defined(HSD070PFW3)
+	&hsd070pfw3_lcm_drv,
+#endif
+
+#if defined(SCF0700M48GGU02)
+	&scf0700m48ggu02_lcm_drv,
+#endif
+
+#if defined(OTM1280A_HD720_DSI_CMD)	
+	&otm1280a_hd720_dsi_cmd_drv, 
+#endif
+
+#if defined(OTM8018B_DSI_VDO)	
+	&otm8018b_dsi_vdo_lcm_drv, 
+#endif
+
+#if defined(NT35512_DSI_VDO)
+	&nt35512_dsi_vdo_lcm_drv, 
+#endif
+
+#if defined(NT35512_WVGA_DSI_VDO_BOE)
+	&nt35512_wvga_dsi_vdo_boe_drv, 
+#endif
+
+#if defined(HX8392A_DSI_CMD)
+  &hx8392a_dsi_cmd_lcm_drv,
+#endif 
+
+#if defined(NT35516_QHD_DSI_CMD_IPSBOE)
+  &nt35516_qhd_dsi_cmd_ipsboe_lcm_drv,
+#endif
+
+#if defined(NT35516_QHD_DSI_CMD_IPSBOE_WVGA)
+  &nt35516_qhd_dsi_cmd_ipsboe_wvga_lcm_drv,
+#endif
+
+#if defined(NT35516_QHD_DSI_CMD_IPS9K1431)
+  &nt35516_qhd_dsi_cmd_ips9k1431_drv,
+#endif
+
+#if defined(NT35516_QHD_DSI_CMD_TFT9K1342)
+  &nt35516_qhd_dsi_cmd_tft9k1342_drv,
+#endif
+
+#if defined(NT35516_QHD_DSI_VEDIO)
+  &nt35516_qhd_rav4_lcm_drv,
+#endif
+
+#if defined(BP070WS1)
+  &bp070ws1_lcm_drv,
+#endif
+
+#if defined(BP101WX1)
+  &bp101wx1_lcm_drv,
+#endif
+
+#if defined(BP101WX1_N)
+  &bp101wx1_n_lcm_drv,
+#endif
+
+#if defined(NT35510_FWVGA)
+  &nt35510_fwvga_lcm_drv,
+#endif
+
+#if defined(R63311_FHD_DSI_VDO_SHARP)
+	&r63311_fhd_dsi_vdo_sharp_lcm_drv,
+#endif
+
+#if defined(R81592_HVGA_DSI_CMD)
+	&r81592_hvga_dsi_cmd_drv,
+#endif
+
+#if defined(RM68190_QHD_DSI_VDO)
+	&rm68190_dsi_vdo_lcm_drv,
+#endif
+
+#if defined(NT35596_FHD_DSI_VDO_TRULY)
+	&nt35596_fhd_dsi_vdo_truly_lcm_drv,
+#endif
+
+#if defined(OTM9608_WVGA_DSI_CMD)
+	&otm9608_wvga_dsi_cmd_drv,
+#endif
+
+#if defined(NT35510_DBI_18BIT_GIONEE)
+	&nt35510_dbi_18bit_gionee_lcm_drv,
+#endif
+
+#if defined(NT35510_ZHONGGUANDIAN_TFT397H110_HSD_MCU18_WVGA)
+	&nt35510_zhongguandian_tft397h110_mcu_wvga_lcm_drv,
+#endif
+
+#if defined(RM68180_ZHUOERSHI_Z40153N50Q4M_MCU_WVGA)
+	&rm68180_zhuoershi_z40153n50q4m_mcu_wvga_lcm_drv,
+#endif
+
+#if defined(OTM8009A_AIZHUOERTAI_A4019N50Q0_CTC_MCU18_WVGA)
+	&otm8009a_aizhuoertai_a4019n50q0_mcu_wvga_lcm_drv,
+#endif
+
+#if defined(OTM8009A_HANSEN_HS4534FWNC23_00_DSI_FWVGA)
+	&otm8009a_hansen_hs4534fwnc23_00_dsi_fwvga_lcm_drv,
+#endif
+
+#if defined(NT35510_HONGSHENG_HS4001065A_BOE_MCU18_WVGA)
+	&nt35510_hongsheng_HS4001065A_mcu_wvga_lcm_drv,
+#endif 
+#if defined(RM68180_FEIER_FTM397136A_CTC_MCU18_WVGA)
+	&rm68180_feier_ftm397136a_mcu_wvga_lcm_drv,
+#endif 
+
+
+#if defined(OTM8009A_HONGSHENG_HS4501071A_CMI_DSI_2_FWVGA)
+	&otm8009a_hongsheng_hs4501071a_dsi_fwvga_lcm_drv,
+#endif
+#if defined(ILI9806C_YIXINDA_Y82912_HSD_DSI_2_VDO_FWVGA)
+	&ili9806c_fwvga_dsi_vdo_drv,
+#endif 
+#if defined(OTM9605_HANSEN_HS4532QHNC23_00_CMI_DSI_VDO_QHD)
+	&otm9605_hansen_HS4532QHNC23_00_CMI_dsi_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(NT35510_HANSEN_HS40134WVNS39_00_HYDIS_MCU18_WVGA)
+	&nt35510_hansen_HS40134WVNS39_00_HYDIS_mcu18_wvga_lcm_drv,
+#endif
+
+
+#if defined(OTM9605A_YKL_LP045APTP091A_CD_AUO_DSI_VDO_QHD)
+	&otm9605a_dsi_vdo_lcm_drv,
+#endif
+
+
+#if defined(NT35510_DISIPULI_DP0801_40WV_BOE_MCU18_WVGA)
+	&nt35510_disipuli_dp0801_40wv_mcu_wvga_lcm_drv,
+#endif
+
+#if defined(OTM8018B_YKL_LM040APYP104A_CD_AUO_DSI_2_FWVGA)
+	&otm8018b_ykl_LM040APYP104A_dsi_fwvga_lcm_drv,
+#endif
+
+#if defined(ILI9806_UNIX_UT45013A0_00_HSD_MCU18_FWVGA)
+	&ili9806_unix_ut45013a0_00_HSD_mcu18_fwvga_lcm_drv,
+#endif
+
+#if defined(ILI9806_ZHONGGUANGDIAN_T40BMLP22_IVO_MCU24_WVGA)
+	&ili9806_zhongguangdian_t40bmlp22_IVO_mcu24_wvga_lcm_drv,
+#endif
+
+#if defined(NT35510H_TIANCHUANGGUANG_T40BMLP22_CTC_MCU24_WVGA)
+	&nt35510h_tianchuangguang_T40BMLP22_CTC_mcu24_wvga_lcm_drv,
+#endif 
+
+#if defined(NT35510_HANNSTAR_HF4528_HSD_DSI_2_FWVGA)
+	&nt35510_hannstar_HF4528_HSD_dsi_2_fwvga_lcm_drv,
+#endif 
+
+#if defined(OTM8012_RIXIN_NST397WV3922ANP_HSD_MCU18_WVGA)
+	&otm8012_rixin_NST397WV3922ANP_HSD_mcu18_wvga_lcm_drv,
+#endif
+
+#if defined(OTM8009A_HONGTAO_HT45009A_V0_CPT_MCU18_FWVGA)
+	&otm8009a_hongtao_HT45009A_V0_CPT_mcu18_fwvga_lcm_drv,
+#endif
+
+#if defined(HX8389B_XINGLI_QHD0500D60225_DSI_VDO_QHD)
+      &hx8389b_xingli_QHD0500D60225_dsi_vdo_qhd_lcm_drv
+#endif
+
+#if defined(OTM8009A_NISIN_NSNST397WV3923ANP_CMI_MCU24_WVGA)
+	&otm8009a_nisin_NSNST397WV3923ANP_CMI_mcu24_wvga_lcm_drv,
+#endif
+
+
+#if defined(HX8369A_HUAXIAN_HX451023FP_BOE_DSI_2_FWVGA)
+	&hx8369a_huaxian_HX451023FP_BOE_dsi_2_fwvga_lcm_drv,
+#endif
+
+#if defined(OTM8009A_HONGDA_HDKM0493_CMI_DSI_2_FWVGA)
+	&otm8009a_hongda_HDKM0493_CMI_dsi_2_fwvga_lcm_drv,
+#endif
+#if defined(RM68180_YASHU_YS397WV39_159A_BOE_MCU18_WVGA)
+	&rm68180_yashu_YS397WV39_159A_BOE_mcu18_wvga_lcm_drv,
+#endif
+#if defined(ILI9806_ZHONGGUANGDIAN_TFT397K144_IVO_MCU18_WVGA)
+	&ili9806_zhongguangdian_TFT397K144_IVO_mcu18_wvga_lcm_drv,
+#endif
+
+
+#if defined(OTM8012_NISIN_NST397WV3932ANP_CMI_MCU18_WVGA)
+	&otm8012_nisin_NST397WV3932ANP_CMI_mcu18_wvga_lcm_drv,
+#endif
+
+#if defined(ILI9806_HANSEN_HS5053FWNC25_01_DSI_CPT_FWVGA)
+	&ili9806_hansen_HS5053FWNC25_01_dsi_CPT_fwvga_lcm_drv,
+#endif
+
+#if defined(RM68180_HAIFEI_HF150390000A01051616_HSD_MCU18_FWVGA)
+	&rm68180_haifei_HF150390000A01051616_HSD_mcu18_fwvga_lcm_drv,
+#endif 
+
+#if defined(RM68180_DAXIAN_D397N3189V1_HYDIS_MCU18_WVGA)
+	&rm68180_daxian_D397N3189V1_HYDIS_mcu18_wvga_lcm_drv,
+#endif
+
+#if defined(ILI9806_HANSEN_HS5063FWNC39_CPT_MCU18_FWVGA)
+	&ili9806_hansen_HS5063FWNC39_CPT_mcu18_fwvga_lcm_drv,
+#endif
+#if defined(ILI9806_XINYONGLONG_XYL4578_BOE_MCU18_FWVGA)
+	&ili9806_xinyonglong_XYL4578_BOE_mcu18_fwvga_lcm_drv,
+#endif
+
+#if defined(HX8369A_NISIN_NST446FW2302ANK_TM_DSI_2_FWVGA)
+	&hx8369a_nisin_NST446FW2302ANK_TM_dsi_2_fwvga_lcm_drv,
+#endif
+
+#if defined(OTM8018B_YASHU_YS500FW39_022A_BOE_DSI_FWVGA)
+	&otm8018b_yashu_YS500FW39_022A_BOE_dsi_fwvga_lcm_drv,
+#endif
+
+
+#if defined(NT35516_DIJING_90_25339_4277B_AUO_DSI_2_QHD)
+        &nt35516_dijing_90_25339_4277B_AUO_dsi_2_qhd_lcm_drv,
+#endif
+
+#if defined(NT35516_AIZHUOERTAI_A53027N50AN_AUO_DSI_2_QHD)
+        &nt35516_aizhuoertai_A53027N50AN_AUO_dsi_2_qhd_lcm_drv,
+#endif
+
+#if defined(HX8369A_HAIFEI_HF_14539_2059_A0_CMI_MCU18_FWVGA)
+	&hx8369a_haifei_HF_14539_2059_A0_CMI_mcu18_fwvga_lcm_drv,
+#endif
+
+#if defined(HX8369A_HENGSHENG_HS045IK_01B_TM_MCU18_FWVGA)
+	&hx8369a_hengsheng_HS045IK_01B_TM_mcu18_fwvga_lcm_drv,
+#endif
+
+#if defined(ILI9806_ZHUOXIAN_FD050FWV011S_MCU18_FWVGA)
+	&ili9806_zhuoxian_FD050FWV011S_mcu18_fwvga_lcm_drv,
+#endif
+
+#if defined(OTM8009A_HENTONGKAIXIN_HT50019_A_HSD_MCU18_FWVGA)
+	&otm8009a_hentongkaixin_HT50019_A_HSD_mcu18_fwvga_lcm_drv,
+#endif
+
+#if defined(OTM8009A_HANSEN_HS5063FWNC39_00_CPT_MCU18_FWVGA)
+	&otm8009a_hansen_HS5063FWNC39_00_CPT_mcu18_fwvga_lcm_drv,
+#endif
+
+#if defined(HX8369A_HENGSHENG_HS040IH_01E_TM_MCU18_WVGA)
+	&hx8369a_hengsheng_HS040IH_01E_TM_mcu18_wvga_lcm_drv,
+#endif
+
+#if defined(HX8389B_CHUANGLAIYA_KQX4513E10_CMI_DSI_2_VDO_QHD)
+	&hx8389b_chuanglaiya_KQX4513E10_CMI_dsi_2_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(OTM9605A_YKL_LP045APTP203A_AUO_DSI_2_VDO_QHD)
+	&otm9605a_ykl_LP045APTP203A_AUO_dsi_2_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(OTM9608A_CHUANGXING_CH45L1190V0_LG_DSI_2_QHD)
+	&otm9608a_chuangxing_CH45L1190V0_LG_dsi_2_qhd_lcm_drv,
+#endif
+
+#if defined(OTM9608A_QICAI_K45CO23_1322A_1N_CMO_DSI_2_QHD)
+	&otm9608a_qicai_K45CO23_1322A_1N_CMO_dsi_2_qhd_lcm_drv,
+#endif
+
+
+#if defined(HX8389B_HUAXIAN_HX451139QP_BOE_DSI_2_QHD)
+      &hx8389b_huaxian_HX451139QP_BOE_dsi_2_qhd_lcm_drv
+#endif
+
+#if defined(HX8369A_HUARUI_MS_HX450939FP_BOE_MCU18_FWVGA)
+	&hx8369a_HUARUI_MS_HX450939FP_BOE_mcu18_fwvga_lcm_drv,
+#endif
+
+
+#if defined(SH1282_NISIN_NST446FW2303ANJ_CMI_DSI_2_FWVGA)
+	&SH1282_NISIN_NST446FW2303ANJ_CMI_DSI_2_FWVGA_lcm_drv,
+#endif
+
+
+
+#if defined(NT35512_AIZHUOERTAI_A40249N50XN_A_HYUNDAI_VDO_WVGA)
+	&nt35512_aizhuoertai_A40249N50XN_A_Hyundai_vdo_wvga_lcm_drv,
+#endif
+
+#if defined(NT35510_AIZHUOERTAI_A40249N50XN_A_HYUNDAI_DSI_WVGA)
+	&nt35510_aizhuoertai_A40249N50XN_A_Hyundai_dsi_wvga_lcm_drv,
+#endif
+
+#if defined(NT35510_AIZHUOERTAI_A40249N50AN_BOE_DSI_WVGA)
+	&nt35510_aizhuoertai_A40249N50AN_BOE_dsi_wvga_lcm_drv,
+#endif
+
+#if defined(OTM8009A_SUXIAN_S_40_08700A_MCU_WVGA)
+	&otm8009a_suxian_S_40_08700A_mcu_wvga_lcm_drv,
+#endif
+
+#if defined(OTM8009A_YIXINDA_Y82635_MCU_WVGA)
+	&otm8009a_yixinda_Y82635_mcu_wvga_lcm_drv,
+#endif
+
+#if defined(NT35510_BELIJ_B12T40647N_MCU18_WVGA)
+	&nt35510_belij_B12T40647N_mcu18_wvga_lcm_drv,
+#endif
+
+#if defined(HX8363_SONGRUI_ST040MOMS59_MCU18_WVGA)
+	&hx8363_songrui_ST040MOMS59_mcu18_wvga_lcm_drv,
+#endif
+
+#if defined(ILI9805_APEX_A40179N50QI_A_MCU_WVGA)
+	&ili9805_apex_a40179n50qi_a_mcu_wvga_lcm_drv,
+#endif
+
+#if defined(OTM8009A_AIZUOERTAI_MS_A40230N00EO_CTC_MCU18_WVGA)
+	&otm8009a_aizuoertai_MS_A40230N00EO_CTC_mcu18_wvga_lcm_drv,
+#endif
+#if defined(ILI9806_HANSEN_HS40143WVNC39_CPT_MCU18_WVGA)
+	&ili9806_hansen_HS40143WVNC39_CPT_mcu18_wvga_lcm_drv,
+#endif
+
+#if defined(RM68190_YIKUAILAI_LQ050AMTP109A_AUO_DSI_2_QHD_VDO)
+	&RM68190_YIKUAILAI_LQ050AMTP109A_AUO_DSI_2_QHD_VDO_lcm_drv,
+#endif
+
+#if defined(RM68140_HUISHENG_VT35FC035_CTC_MCU18_HVGA)
+	&rm68140_huisheng_VT35FC035_CTC_mcu18_hvga_lcm_drv,
+#endif
+
+#if defined(ILI9806_HUARUI_S1562A_DSI_2_IVO_FWVGA_VDO)
+	&ili9806_huarui_S1562A_dsi_2_IVO_fwvga_vdo_lcm_drv,
+#endif
+
+#if defined(ILI9806_HUARUI_S1562A_DSI_2_IVO_WVGA_VDO)
+	&ili9806_huarui_S1562A_dsi_2_IVO_wvga_vdo_lcm_drv,
+#endif
+	
+#if defined(OTM8012A_SUXIAN_S_40_08700B_BOE_MCU18_WVGA)
+	&otm8012a_suxian_S_40_08700B_BOE_mcu18_wvga_lcm_drv,
+#endif
+
+#if defined(OTM8012_NISIN_NST397WV3923BNP_CMI_MCU18_WVGA)
+	&otm8012_nisin_NST397WV3923BNP_CMI_mcu18_wvga_lcm_drv,
+#endif
+
+#if defined(NT35510_CHUANGXING_CH40B1159V0_BOE_MCU_WVGA)
+	&nt35510_chuangxing_ch40b1159v0_BOE_mcu_wvga_lcm_drv,
+#endif
+
+#if defined(OTM8018B_HONGTAO_HT45030A_V0_CPT_DSI_VDO_2_FWVGA)
+	&otm8018b_hongtao_HT45030A_V0_CPT_dsi_vdo_2_fwvga_lcm_drv,
+#endif
+
+#if defined(RM68180_BEILIJIA_B13T40804N_01_CMI_MCU18_WVGA)
+	&rm68180_beilijia_B13T40804N_01_CMI_mcu18_wvga_lcm_drv,
+#endif
+
+#if defined(NT35510_AIZHUOERTAI_A45108N50HN_HSD_MCU18_FWVGA)
+	&NT35510_AIZHUOERTAI_A45108N50HN_HSD_MCU18_FWVGA_lcm_drv,
+#endif
+
+#if defined(OTM8012_HANSEN_HS5063FWNC39_02_CPT_MCU18_FWVGA)
+	&otm8012_hansen_HS5063FWNC39_02_CPT_mcu18_fwvga_lcm_drv,
+#endif
+
+#if defined(NT35516H_XINGGUANGXIN_SBN45QH020AN_BOE_DSI_QHD)
+	&nt35516h_xingguangxin_SBN45QH020AN_BOE_dsi_qhd_lcm_drv,
+#endif
+
+
+
+#if defined(OTM8012_HAIFEI_HF145391127_A0_HSD_MCU18_FWVGA)
+	&otm8012_haifei_HF145391127_A0_HSD_mcu18_fwvga_lcm_drv,
+#endif
+
+#if defined(NT35510_ZHONGGUANDIAN_TFT397Y110_HYDIS_MCU_WVGA)
+		&nt35510_zhongguandian_TFT397Y110_HYDIS_mcu_wvga_lcm_drv,
+#endif
+
+#if defined(OTM8012_HAIFEI_HF150300000A0_HSD_MCU18_FWVGA)
+	&otm8012_haifei_HF150300000A0_HSD_mcu18_fwvga_lcm_drv,
+#endif
+
+#if defined(OTM8012A_RIXIN_LNST397WV0020_CMI_MCU18_WVGA)
+	&otm8012a_rixin_LNST397WV0020_CMI_mcu18_wvga_lcm_drv,
+#endif
+#if defined(ILI9806_ZHONGGUANGDIAN_TFT050H024_HSD_MCU18_FWVGA)
+	&ili9806_zhongguangdian_TFT050H024_HSD_mcu18_fwvga_lcm_drv,
+#endif
+
+#if defined(OTM9608A_HENGSHENG_CPT_DSI_2_QHD)
+	&otm9608a_hengsheng_CPT_dsi_2_qhd_lcm_drv,
+#endif
+
+#if defined(OTM9608A_HENGSHENG_TM_DSI_2_QHD)
+	&otm9608a_hengsheng_TM_dsi_2_qhd_lcm_drv,
+#endif
+
+#if defined(ILI9806_ZHONGGUANGDIAN_TFT445K011_IVO_MCU18_FWVGA)
+	&ili9806_zhongguangdian_TFT445K011_IVO_mcu18_fwvga_lcm_drv,
+#endif
+
+#if defined(ILI9806_ZHONGGUANGDIAN_TFT445H011_HSD_MCU18_FWVGA)
+	&ili9806_zhongguangdian_TFT445H011_HSD_mcu18_fwvga_lcm_drv,
+#endif
+
+#if defined(NT35310_HYT_HY_103500612_126_A99_HSD_MCU18_HVGA)
+	&nt35310_hyt_HY_103500612_126_A99_HSD_mcu18_hvga_lcm_drv,
+#endif
+
+#if defined(NT35310_XLD_XLD0351140V135_LONGTENG_MCU18_HVGA)
+	&nt35310_xld_XLD0351140V135_longteng_mcu18_hvga_lcm_drv,
+#endif
+
+
+#if defined(OTM9605_HENGSHENG_HS050PQ_76E_CPT_DSI_VDO_QHD)
+	&otm9605_hengsheng_HS050PQ_76E_CPT_dsi_vdo_qhd_lcm_drv,
+#endif
+
+
+
+#if defined(NT35510_HANSEN_HS40143WVNC39_00_CPT_MCU18_WVGA)
+	&NT35510_HANSEN_HS40143WVNC39_00_CPT_MCU18_WVGA_lcm_drv,
+#endif
+
+#if defined(NT35510_AIZHUOERTAI_MS_A40230N50BN_BOE_MCU18_WVGA)
+	&nt35510_aizhuoertai_MS_A40230N50BN_BOE_mcu18_wvga_lcm_drv,
+#endif
+
+#if defined(HX8389B_ZHUOERSHI_MSZ50172N50X2H_HSD_DSI_VDO_QHD)
+	&hx8389b_zhuoershi_MSZ50172N50X2H_HSD_dsi_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(NT35510_XINGLIANGDA_XLD0402110B1_35_BOE_MCU18_WVGA)
+	&nt35510_xingliangda_XLD0402110B1_35_BOE_mcu18_wvga_lcm_drv,
+#endif
+#if defined(ILI9806H_XINGXUNDA_XII397110WV_IVO_MCU18_WVGA)
+	&ili9806h_xingxunda_XII397110WV_IVO_mcu18_wvga_lcm_drv,
+#endif
+
+#if defined(RM68140_JINPING_JP35H038A0_LONGTENG_MCU18_HVGA)
+	&rm68140_jinping_JP35H038A0_longteng_mcu18_hvga_lcm_drv,
+#endif
+
+#if defined(ILI9806_HUARUI_S1382A_DSI_2_HSD_FWVGA_VDO)
+	&ili9806_huarui_S1382A_dsi_2_HSD_fwvga_vdo_lcm_drv,
+#endif
+
+#if defined(OTM8012_HAIFEI_HF14639_0000_A0_IVO_MCU18_FWVGA)
+	&otm8012_haifei_HF14639_0000_A0_IVO_mcu18_fwvga_lcm_drv,
+#endif
+
+#if defined(NT35517_RIXIN_NST446QH3912ANJ_CMI_DSI_QHD)
+	&nt35517_rixin_NST446QH3912ANJ_CMI_dsi_qhd_lcm_drv,
+#endif
+
+#if defined(ILI9806C_HAOSHITONG_HF5024_QR_A_HSD_DSI_2_VDO_FWVGA)
+	&ili9806c_haoshitong_HF5024_QR_A_HSD_dsi_2_vdo_fwvga_lcm_drv,
+#endif
+
+#if defined(OTM9608A_HENGSHENG_HF_15525_2085_A0_LONGTENG_DSI_2_QHD)
+	&otm9608a_hengsheng_HF_15525_2085_A0_longteng_dsi_2_qhd_lcm_drv,
+#endif
+
+#if defined(HX8389B_ZHUOERSHI_MSZ45126N50X3H_HSD_DSI_VDO_QHD)
+	&hx8389b_zhuoershi_MSZ45126N50X3H_HSD_dsi_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(ILI9488_HF_140391260_A0_IVO_MCU18_HVGA)
+	&ili9488_HF_140391260_A0_IVO_mcu18_hvga_lcm_drv,
+#endif
+
+#if defined(ILI9488_UNIX23510600200_MCU18_HVGA)
+	&ili9488_UNIX23510600200_mcu18_hvga_lcm_drv,
+#endif
+
+#if defined(ILI9488_IJ0350CMO3501A_MCU18_HVGA)
+	&ili9488_IJ0350CMO3501A_mcu18_hvga_lcm_drv,
+#endif
+
+#if defined(RM68140_HF_140391226_A0_TM_MCU18_HVGA)
+	&rm68140_HF_140391226_A0_TM_mcu18_hvga_lcm_drv,
+#endif
+
+#if defined(RM68140_HF_135350000_A0_LT_MCU18_HVGA)
+	&rm68140_HF_135350000_A0_LT_mcu18_hvga_lcm_drv,
+#endif
+
+#if defined(RM68140_HUARUI_S1769A_HSD_MCU18_HVGA)
+	&rm68140_huarui_S1769A_HSD_mcu18_hvga_lcm_drv,
+#endif
+
+#if defined(NT35510_HUAXIAN_MS_HX402935W_A_BOE_MCU18_WVGA)
+	&nt35510_huaxian_MS_HX402935W_A_BOE_mcu18_wvga_lcm_drv,
+#endif
+#if defined(NT35510_HANSHEN_HS40121WVNS35_HYDIS_MCU18_WVGA)
+	&nt35510_hanshen_HS40121WVNS35_HYDIS_mcu18_wvga_lcm_drv,
+#endif
+
+
+#if defined(ILI9806C_HAOSHITONG_HW397105_DSI_2_IVO_WVGA_VDO)
+	&ili9806c_haoshitong_HW397105_dsi_2_IVO_wvga_vdo_lcm_drv,
+#endif
+
+#if defined(OTM9605A_HENGSHENG_HS050PQ_76B_CPT_DSI_VDO_QHD)
+	&otm9605A_hengsheng_HS050PQ_76B_CPT_dsi_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(OTM9605_HENGSHENG_HS050PQ_76H_CPT_DSI_VDO_QHD)
+	&otm9605_hengsheng_HS050PQ_76H_CPT_dsi_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(OTM9608A_HENGSHENG_HS050IL_71C_TM_DSI_VDO_QHD)
+	&otm9608A_hengsheng_HS050IL_71C_TM_dsi_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(OTM8009A_HONGSHENG_HS4501118A_CMI_MCU18_FWVGA)
+	&otm8009a_hongsheng_HS4501118A_CMI_mcu18_fwvga_lcm_drv,
+#endif
+
+#if defined(ILI9806_HENGSHENG_HS045PK_02A_CMI_MCU18_FWVGA)
+	&ili9806_hengsheng_HS045PK_02A_CMI_mcu18_fwvga_lcm_drv,
+#endif
+
+#if defined(HX8389B_ZHUOERSHI_MSZ60056N50X3H_A_HSD_DSI_VDO_QHD)
+	&hx8389b_zhuoershi_MSZ60056N50X3H_A_HSD_dsi_vdo_qhd_lcm_drv,
+#endif
+#if defined(OTM9605A_YKL_LP060HPTP030A_HSD_DSI_VDO)
+	&OTM9605A_YKL_LP060HPTP030A_HSD_DSI_VDO_lcm_drv,
+#endif
+
+#if defined(OTM9605_RIXIN_NST500QH2302ANJ_LG_DSI_VDO_QHD)
+	&otm9605_rixin_NST500QH2302ANJ_LG_dsi_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(OTM9605A_AIZUOERTAI_A50100N51HD_DSI_QHD)
+	&otm9605a_aizuoertai_A50100N51HD_dsi_qhd_lcm_drv,
+#endif
+
+#if defined(HX8389B_CHUANGLAIYA_KQX5006E12_JDI_DSI_VDO_QHD)
+	&hx8389b_chuanglaiya_KQX5006E12_JDI_dsi_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(ILI9806E_QIJIA_QJ446008S0_HSD_DSI_2_VDO_FWVGA)
+	&ili9806E_QIJIA_QJ446008S0_HSD_dsi_2_vdo_fwvga_lcm_drv,
+#endif
+
+#if defined(ILI9806_AZET_A45119N50HI_DSI_2_HSD_FWVGA_VDO)
+	&ili9806_azet_A45119N50HI_dsi_2_HSD_fwvga_vdo_lcm_drv,
+#endif
+
+#if defined(OTM9605A_AIZHUOERTAI_A50100N50HO_A_HSD_DSI_2_QHD)
+	&otm9605a_aizhuoertai_A50100N50HO_A_HSD_dsi_2_qhd_lcm_drv,
+#endif	
+
+#if defined(HX8389B_ZHUOERSHI_MSZ47043N50X3H_A_HSD_DSI_2_VDO_QHD)
+	&hx8389b_zhuoershi_MSZ47043N50X3H_A_HSD_dsi_2_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(RM68190_JINGQI_JM466QH009_YOUDA_DSI_2_VDO_QHD)
+	&RM68190_jingqi_JM466QH009_YOUDA_dsi_2_vdo_qhd_lcm_drv,
+#endif
+#if defined(ILI9486L_HF_135390000_A0_HSD_MCU18_HVGA)
+	&ili9486L_HF_135390000_A0_HSD_mcu18_hvga_lcm_drv,
+#endif
+
+#if defined(ILI9806C_HENGSHENG_HS045PK_02E_DSI_VDO_FWVGA)
+		&ili9806C_hengsheng_HS045PK_02E_dsi_vdo_fwvga_lcm_drv,
+#endif
+
+#if defined(ILI9806_APEX_A40269N50VIA_DSI_LONGTENG_WVGA_VDO)
+	&ili9806_APEX_A40269N50VIA_dsi_longteng_wvga_vdo_lcm_drv,
+#endif
+
+#if defined(OTM9605A_YKL_LP047APTP016A_AUO_DSI_2_QHD)
+	&otm9605a_ykl_LP047APTP016A_AUO_dsi_2_qhd_lcm_drv,
+#endif
+
+
+#if defined(NT35510_JINZHENGYUAN_JZY397P22C_HSD_MCU18_WVGA)
+	&nt35510_jinzhengyuan_JZY397P22C_HSD_mcu18_wvga_lcm_drv,
+#endif
+
+#if defined(OTM8012A_APEX_MSA40271N50Q0A_CMI_DSI_2_WVGA)
+	&otm8012a_apex_MSA40271N50Q0A_CMI_dsi_2_wvga_lcm_drv,
+#endif
+
+#if defined(ILI9806C_APEX_MSA40271N50QIA_DSI_2_CMI_WVGA_VDO)
+	&ili9806c_apex_MSA40271N50QIA_dsi_2_CMI_wvga_vdo_lcm_drv,
+#endif
+#if defined(RM68190_JIANMEIOU_JM466QH015_AUO_DSI_2_QHD_VDO)
+	&RM68190_JIANMEIOU_JM466QH015_AUO_DSI_2_QHD_VDO_lcm_drv,
+#endif
+
+
+#if defined(NT35510_FEIER_FTM397167A_HYDIS_MCU18_WVGA)
+	&nt35510_feier_FTM397167A_HYDIS_mcu18_wvga_lcm_drv,
+#endif
+
+#if defined(RM68180_FEIER_FTM397137A_CTC_MCU18_WVGA)
+	&rm68180_feier_FTM397137A_CTC_mcu18_wvga_lcm_drv,
+#endif
+
+#if defined(OTM8018B_HONGSHENG_HS4501197A_CMI_DSI_VDO_2_FWVGA)
+	&otm8018b_hongsheng_HS4501197A_CMI_dsi_vdo_2_fwvga_lcm_drv,
+#endif
+
+#if defined(HX8389B_AIZHUOERTAI_A45123N50QHA_CMI_DSI_2_VDO_QHD)
+	&hx8389b_aizhuoertai_A45123N50QHA_CMI_dsi_2_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(OTM9605_HANSEN_HS50101HSPC25_00_JDI_DSI_VDO_QHD)
+	&otm9605_hansen_HS50101HSPC25_00_JDI_dsi_vdo_qhd_lcm_drv,
+#endif
+#if defined(NT35517_HONGSHENG_HS466A_HSD_DSI_QHD)
+	&nt35517_hongsheng_HS466A_HSD_dsi_qhd_lcm_drv,
+#endif
+#if defined(NT35517_RIXIN_NST446QH2305ANJ_CMI_DSI_QHD)
+	&nt35517_rixin_NST446QH2305ANJ_CMI_dsi_qhd_lcm_drv,
+#endif
+#if defined(ILI9806C_AZET_A40271N00VI_A_DSI_2_IVO_WVGA_VDO)
+	&ili9806c_azet_A40271N00VI_A_dsi_2_IVO_wvga_vdo_lcm_drv,
+#endif
+
+#if defined(ILI9806H_AZET_A40271N01VI_A_DSI_2_IVO_WVGA_VDO)
+	&ili9806h_azet_A40271N01VI_A_dsi_2_IVO_wvga_vdo_lcm_drv,
+#endif
+#if defined(RM68180_QICAI_K40CM39_1238A_1N_BOE_MCU18_WVGA)
+	&rm68180_qicai_K40CM39_1238A_1N_BOE_mcu18_wvga_lcm_drv,
+#endif
+#if defined(RM68171_SONGRUI_ST040WOC_S71_CTC_DSI_2_WVGA_VDO)
+	&RM68171_SONGRUI_ST040WOC_S71_CTC_DSI_2_WVGA_VDO_lcm_drv,
+#endif
+
+#if defined(OTM8018B_HONGTAO_HT45057A_V0_BOE_DSI_VDO_2_FWVGA)
+	&otm8018b_hongtao_HT45057A_V0_BOE_dsi_vdo_2_fwvga_lcm_drv,
+#endif
+#if defined(HX8379A_AZET_A40271N51BH__BOE_DSI_2_QHD_VDO_WVGA)
+	&HX8379A_AZET_A40271N51BH__BOE_DSI_2_qhd_VDO_WVGA_lcm_drv,
+#endif
+
+#if defined(NT35517_TENGSHENG_HS5001204A_HDS_DSI_QHD)
+	&nt35517_tengsheng_HS5001204A_HDS_dsi_qhd_lcm_drv,
+#endif
+#if defined(NT35510_JINZHENGYUAN_JZY397P22A_MCU18_BOE_WVGA)
+	&nt35510_jinzhengyuan_JZY397P22A_mcu18_BOE_wvga_lcm_drv,
+#endif
+#if defined(HX8369B_JINGDA_JM430WV020_AUO_DSI_2_WVGA)
+	&hx8369b_jingda_JM430WV020_AUO_dsi_2_wvga_lcm_drv,
+#endif
+
+#if defined(HX8369B_JINGDA_NEW_JM430WV037_AU_DSI_2_WVGA)
+	&hx8369b_jingda_new_JM430WV037_AU_dsi_2_wvga_lcm_drv,
+#endif
+
+#if defined(NT35517_HONGSHENG_HS5001204A_HSD_DSI_QHD)
+	&nt35517_hongsheng_HS5001204A_HSD_dsi_qhd_lcm_drv,
+#endif
+
+#if defined(ILI9806C_HUARUI_S1639A_DSI_VDO_FWVGA)
+	&ili9806C_huarui_S1639A_dsi_vdo_fwvga_lcm_drv,
+#endif
+
+#if defined(NT35517_HONGSHENG_HS466A_HSD_DSI_QHD)
+	&nt35517_hongsheng_HS466A_HSD_dsi_qhd_lcm_drv,
+#endif
+
+#if defined(RM68171_YIHUA_YH_397MD3902N0_CMI_DSI_2_WVGA_VDO)
+	&RM68171_yihua_YH_397MD3902N0_CMI_DSI_2_WVGA_VDO_lcm_drv,
+#endif
+
+#if defined(ILI9806C_HUAXIAN_DSI_2_VDO_FWVGA)
+	&ili9806c_huaxian_dsi_2_vdo_fwvga_lcm_drv,
+#endif
+
+#if defined(R61408_RIXIN_NST397WV3939AND_MCU18_LG_WVGA)
+	&r61408_rixin_NST397WV3939AND_mcu18_LG_wvga_lcm_drv,
+#endif
+
+
+#if defined(OTM8018B_SUXIAN_S4013200A_BOE_DSI_2_VDO_WVGA)
+	&otm8018b_suxian_S4013200A_BOE_dsi_2_vdo_wvga_lcm_drv,
+#endif
+
+#if defined(HX8389B_HST_HQH5028_HSD_DSI_2_VDO_QHD)
+	&hx8389b_hst_HQH5028_HSD_dsi_2_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(R61408_NISIN_NST397WV3938ANP_V1_LG_MCU18_WVGA)
+	&r61408_nisin_NST397WV3938ANP_V1_LG_mcu18_wvga_lcm_drv,
+#endif
+
+#if defined(OTM8018B_YASHU_YS397WV39_188A_BOE_DSI_2_WVGA)
+	&otm8018b_yashu_YS397wv39_188a_BOE_dsi_2_wvga_lcm_drv,
+#endif
+
+#if defined(NT35517_HONGSHENG_HS4661228A_HSD_DSI_QHD)
+	&nt35517_hongsheng_HS4661228A_HSD_dsi_qhd_lcm_drv,
+#endif
+
+#if defined(HX8389B_LINGRONG_T468_07M_1017_15_TM_DSI_2_VDO_QHD)
+	&hx8389b_lingrong_T468_07M_1017_15_TM_dsi_2_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(ILI9486L_HF_13539_1281_A0_HSD_MCU18_HVGA)
+	&ili9486L_HF_13539_1281_A0_HSD_mcu18_hvga_lcm_drv,
+#endif
+
+#if defined(NT35517_LINGLONG_WD540960G470T470_28M_HSD_DSI_QHD)
+	&nt35517_linglong_WD540960G470T470_28M_HSD_dsi_qhd_lcm_drv,
+#endif
+
+#if defined(OTM8009A_NISIN_NST397WV2312ANK_V1_CMI_DSI_2_WVGA)
+	&otm8009a_nisin_NST397WV2312ANK_V1_CMI_dsi_2_wvga_lcm_drv,
+#endif
+#if defined(NT35517_XINYONGLONG_XYL4789_HSD_DSI_QHD)
+	&nt35517_xinyonglong_XYL4789_HSD_dsi_qhd_lcm_drv,
+#endif
+
+#if defined(HX8369B_LIANGJINGJING_LT43062EHT01_BOE_DSI_WVGA)
+	&hx8369b_liangjingjing_LT43062EHT01_BOE_dsi_wvga_lcm_drv,
+#endif
+
+#if defined(HX8369B_LIANGJINGJING_LT43062EHT01_72M_BOE_DSI_WVGA)
+	&hx8369b_liangjingjing_LT43062EHT01_72M_BOE_dsi_wvga_lcm_drv,
+#endif
+
+#if defined(OTM9608A_CHAUNGLAIYA_KQX5009E12_JDI_DSI_2_CMD_QHD)
+	&otm9608a_chaunglaiya_KQX5009E12_JDI_dsi_2_cmd_qhd_lcm_drv,
+#endif
+
+#if defined(HX8389B_CHUANGLAIYA_KQX5009E12_JDI_DSI_2_VDO_QHD)
+	&hx8389b_chuanglaiya_KQX5009E12_JDI_dsi_2_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(NT35510_HANSEN_DSI_2_VDO_WVGA)
+	&nt35510_hansen_dsi_2_vdo_wvga_lcm_drv,
+#endif
+
+#if defined(OTM9605_HANSEN_HS50101QHPC25_00_JDI_DSI_VDO_QHD)
+        &otm9605_hansen_HS50101QHPC25_00_JDI_dsi_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(NT35510_XYL_XYL45124_MCU_FWVGA)
+	&nt35510_xyl_xyl45124_mcu_fwvga_lcm_drv,
+#endif
+
+
+#if defined(OTM9605A_ZHUOERSHI_HSD_DSI_2_QHD)
+	&otm9605a_zhuoershi_HSD_dsi_2_qhd_lcm_drv,
+#endif
+
+#if defined(RM68191_XINGLIANGDA_XLD0550110V1_25_IVO_DSI_2_VDO_QHD)
+	&RM68191_xingliangda_XLD0550110V1_25_IVO_dsi_2_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(OTM9608A_AZET_CMO_DSI_2_QHD)
+	&otm9608a_azet_CMO_dsi_2_qhd_lcm_drv,
+#endif
+
+#if defined(NT35517_HONGSHENG_HS5001222A_HSD_DSI_QHD)
+	&nt35517_hongsheng_HS5001222A_HSD_dsi_qhd_lcm_drv,
+#endif
+
+#if defined(OTM9605A_YKL_LP047APTP018A_V01_AUO_DSI_2_VDO_QHD)
+	&otm9605a_ykl_LP047APTP018A_V01_AUO_dsi_2_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(OTM8018B_HONGSHENG_HS4501213A_BOE_DSI_VDO_2_FWVGA)
+	&otm8018b_hongsheng_HS4501213A_BOE_dsi_vdo_2_fwvga_lcm_drv,
+#endif
+#if defined(NT35512_YASHU_YS450WV25_065B_BOE_VDO_FWVGA)
+	&nt35512_yashu_YS450WV25_065B_BOE_vdo_fwvga_lcm_drv,
+#endif
+#if defined(OTM8018B_ZHONGGUANGDIAN_CMI_DSI_VDO_2_FWVGA)
+	&otm8018b_zhongguangdian_CMI_dsi_vdo_2_fwvga_lcm_drv,
+#endif
+
+#if defined(OTM9605A_RIXIN_NST500QH2542ANJ_V1_LG_DSI_2_VDO_QHD)
+	&otm9605a_rixin_NST500QH2542ANJ_V1_LG_dsi_2_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(HX8389B_ZHUOERSHI_Z50244N50X2H_A_DSI_VDO_QHD)
+	&hx8389b_zhuoershi_Z50244N50X2H_A_dsi_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(RM68191_GUOXIAN_KD301_S49823_0381A_CTC_DSI_2_VDO_QHD)
+	&RM68191_guoxian_KD301_S49823_0381A_CTC_dsi_2_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(OTM8009A_HUANYUTONG_HY103970683128A99_HSD_DSI_2_WVGA)
+	&otm8009a_huanyutong_HY103970683128A99_HSD_dsi_2_wvga_lcm_drv,
+#endif
+
+#if defined(NT35517_HONGSHENG_HS5001233A_HSD_DSI_QHD)
+	&nt35517_hongsheng_HS5001233A_HSD_dsi_qhd_lcm_drv,
+#endif
+
+#if defined(OTM8018B_HONGSHENG_HS4501213B_BOE_DSI_VDO_2_FWVGA)
+	&otm8018b_hongsheng_HS4501213B_BOE_dsi_vdo_2_fwvga_lcm_drv,
+#endif
+
+#if defined(RM68171_XINGGUANGXIN_SBR45FW029AN_BOE_DSI_2_FWVGA_VDO)
+	&RM68171_XINGGUANGXIN_SBR45FW029AN_BOE_DSI_2_FWVGA_VDO_lcm_drv,
+#endif
+
+#if defined(NT35517_RIXIN_NST446QH2538ANJ_CMI_DSI_QHD)
+	&nt35517_rixin_NST446QH2538ANJ_CMI_dsi_qhd_lcm_drv,
+#endif
+
+#if defined(OTM9605A_YKL_LP045APTP225A_AUO_DSI_2_VDO_QHD)
+	&otm9605a_ykl_LP045APTP225A_AUO_dsi_2_vdo_qhd_lcm_drv,
+#endif
+
+
+#if defined(SH1282_XINLIANGDA_XLD0402110B1_BOE_DSI_2_WVGA)
+	&SH1282_XINLIANGDA_XLD0402110B1_BOE_DSI_2_WVGA_lcm_drv,
+
+#endif
+
+#if defined(ILI9806H_HF_14539_1389_A0_BOE_MCU18_FWVGA)
+	&ili9806h_HF_14539_1389_A0_BOE_mcu18_fwvga_lcm_drv,
+#endif
+
+#if defined(OTM9605A_HONGTAO_HT498127A_V0_CPT_DSI_QHD)
+	&otm9605A_hongtao_HT498127A_V0_CPT_dsi_qhd_lcm_drv,
+#endif
+
+#if defined(OTM9605A_RIXIN_NST500QH2543ANJ_V1_LG_DSI_2_VDO_QHD)
+	&otm9605a_rixin_NST500QH2543ANJ_V1_LG_dsi_2_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(OTM8009A_SUXIAN_S4014400B_BOE_DSI_2_WVGA)
+	&otm8009a_suxian_S4014400B_BOE_dsi_2_wvga_lcm_drv,
+#endif
+
+#if defined(RM68171_XINGLIANGDA_XLD0450790B1_25_BOE_DSI_2_FWVGA_VDO)
+	&RM68171_XINGLIANGDA_XLD0450790B1_25_BOE_DSI_2_FWVGA_VDO_lcm_drv,
+#endif
+
+#if defined(OTM8012A_YASHU_YS397WV39_197A_BOE_MCU24_WVGA)
+	&otm8012a_yashu_YS397WV39_197A_BOE_mcu24_wvga_lcm_drv,
+#endif
+
+#if defined(OTM9605A_YKL_LP050FPTP179A_CTC_DSI_2_VDO_QHD)
+	&otm9605a_ykl_LP050FPTP179A_CTC_dsi_2_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(OTM9605A_HENGSHENG_HS050PQ_81C_CPT_DSI_2_VDO_QHD)
+	&otm9605a_hengsheng_HS050PQ_81C_CPT_dsi_2_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(HX8389B_UNIX_UT54001A0_00_IVO_DSI_2_VDO_QHD)
+				&hx8389b_unix_UT54001A0_00_IVO_dsi_2_vdo_qhd_lcm_drv,
+#endif	
+
+#if defined(NT35517_XINGLIANGDA_HSD050FMW2D_HSD_DSI_2_VDO_QHD)
+	&nt35517_xingliangda_HSD050FMW2D_HSD_dsi_2_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(HX8357C_HELITAI_QTB3D5122_A0_HSD_DSI_CMD_HVGA)
+	&hx8357c_helitai_QTB3D5122_A0_HSD_dsi_cmd_hvga_lcm_drv,
+#endif
+
+#if defined(OTM8009A_HUAYU_UD0087KP040_IVO_DSI_2_WVGA)
+	&otm8009a_huayu_UD0087KP040_IVO_dsi_2_wvga_lcm_drv,
+#endif
+
+#if defined(NT35510_SUXIAN_S4014400A_HSD_DSI_2_WVGA)
+	&nt35510_suxian_S4014400A_HSD_dsi_2_wvga_lcm_drv,
+#endif
+
+#if defined(OTM9605A_HONGSHENG_HS4501276A_CMI_DSI_2_VDO_QHD)
+	&otm9605a_hongsheng_HS4501276A_CMI_dsi_2_vdo_qhd_lcm_drv,
+#endif
+
+
+#if defined(OTM9605A_HENGSHENG_HS055PQ_02C_IVO_DSI_2_VDO_QHD)
+	&OTM9605A_HENGSHENG_HS055PQ_02C_IVO_DSI_2_VDO_QHD_lcm_drv,
+#endif
+
+#if defined(NT35510_CHUANGLAIYAKE_KX4047D8L0_L_BOE_MCU18_WVGA)
+	&nt35510_chuanglaiyake_KX4047D8L0_L_BOE_mcu18_wvga_lcm_drv,
+#endif
+
+#if defined(OTM8018B_YASHU_YS397WV25_195A_BOE_DSI_2_WVGA)
+	&otm8018b_yashu_YS397WV25_195A_BOE_dsi_2_wvga_lcm_drv,
+#endif
+
+#if defined(ILI9806C_APEX_A40271N32VI_DSI_2_IVO_WVGA_CMD)
+	&ili9806c_apex_A40271N32VI_dsi_2_IVO_wvga_cmd_lcm_drv,
+#endif
+
+#if defined(NT35510_YIXUNTONG_BOE_MCU18_WVGA)
+	&nt35510_yixuntong_BOE_mcu18_wvga_lcm_drv,
+#endif
+
+#if defined(OTM8009_JINGTAI_JTD040347S_HSD_WVGA_MCU18)
+	&otm8009_jingtai_JTD040347S_HSD_WVGA_MCU18_lcm_drv,
+#endif
+
+#if defined(NT35516_RIXIN_NST446QH2538BNK_CMO_DSI_QHD)
+	&nt35516_rixin_NST446QH2538BNK_CMO_dsi_qhd_lcm_drv,
+#endif
+#if defined(OTM8012A_RIXINDA_Y83243_BOE_MCU18_WVGA)
+	&OTM8012A_RIXINDA_Y83243_BOE_MCU18_WVGA_lcm_drv,
+#endif
+
+#if defined(NT35510_RIXIN_MCU18_WVGA)
+	&nt35510_rixin_mcu18_wvga_lcm_drv,
+#endif
+
+#if defined(OTM8009A_NISIN_LN8T397WV0249_CMI_DSI_2_WVGA)
+	&otm8009a_nisin_LN8T397WV0249_CMI_dsi_2_wvga_lcm_drv,
+#endif
+
+#if defined(RM68180_YASHU_YS450WV25_065D_BOE_DSI_CMD_FWVGA)
+	&rm68180_yashu_YS450WV25_065D_BOE_dsi_cmd_fwvga_lcm_drv,
+#endif
+
+#if defined(OTM8018B_HAOSHITONG_HW397148QRD_HSD_DSI_2_WVGA)
+	&otm8018b_haoshitong_HW397148QRD_HSD_dsi_2_wvga_lcm_drv,
+#endif
+
+#if defined(OTM8009A_HAOSHITONG_HW397130_HSD_DSI_2_CMD_WVGA)
+	&otm8009a_haoshitong_HW397130_HSD_dsi_2_cmd_wvga_lcm_drv,
+#endif
+
+#if defined(ILI9806E_HENGSHENG_HS040NH06D_BOE_DSI_2_VDO_WVGA)
+	&ili9806e_hengsheng_HS040NH06D_BOE_dsi_2_vdo_wvga_lcm_drv,
+#endif   
+
+#if defined(RM68180_JIUSHENG_JST397C_CTC_DSI_2_VDO_WVGA)
+	&rm68180_jiusheng_JST397C_CTC_dsi_2_vdo_wvga_lcm_drv,
+#endif
+
+#if defined(OTM9605_HENGSHENG_HS055PQ_03C_CPT_DSI_VDO_QHD)
+	&otm9605_hengsheng_HS055PQ_03C_CPT_dsi_vdo_qhd_lcm_drv,
+#endif
+#if defined(RM68180_XINGLIANGDA_XLD0450790B1_BOE_DSI_FWVGA)
+	&RM68180_XINGLIANGDA_XLD0450790B1_BOE_DSI_FWVGA_lcm_drv,
+#endif
+
+#if defined(OTM8009A_APEX_A40305N00VO_IVO_DSI_2_WVGA)
+	&otm8009a_apex_A40305N00VO_IVO_dsi_2_wvga_lcm_drv,
+#endif
+
+#if defined(OTM8009A_APEX_A45147N50HN_HSD_DSI_2_CMD_FWVGA)
+	&otm8009a_apex_A45147N50HN_HSD_dsi_2_cmd_fwvga_lcm_drv,
+#endif
+#if defined(OTM8009A_WANCHANGLONG_W501298AAA_BOE_DSI_2_CMD_FWVGA)
+	&otm8009a_wanchanglong_W501298AAA_BOE_dsi_2_cmd_fwvga_lcm_drv,
+#endif
+
+#if defined(OTM8009A_FAIR_FTM44660B_BOE_DSI_2_CMD_FWVGA)
+	&otm8009a_fair_FTM44660B_BOE_dsi_2_cmd_fwvga_lcm_drv,
+#endif	
+#if defined(OTM9605A_YAXINWEI_YXW55103C25_AUO_DSI_2_QHD)
+				&otm9605a_yaxinwei_YXW55103C25_AUO_dsi_2_qhd_lcm_drv,
+#endif	
+
+#if defined(RM68171_XINLIANGDA_XLD0450860B1_25_BOE_DSI_2_FWVGA_VDO)
+				&rm68171_xinliangda_XLD0450860B1_25_BOE_dsi_2_fwvga_vdo_lcm_drv,
+#endif
+
+#if defined(HX8357D_APEX_A35406N00QH_A_CMI_DSI_CMD_HVGA)
+				&hx8357d_apex_A35406N00QH_A_CMI_dsi_cmd_hvga_lcm_drv,
+#endif
+
+#if defined(HX8357D_CHUANMA_CMS5102TRKSZ2_BOE_DSI_2_CMD_HVGA)
+	&hx8357d_chuanma_CMS5102TRKSZ2_BOE_dsi_2_cmd_hvga_lcm_drv,
+#endif
+
+#if defined(ILI9806C_CHUANGLAIYA_KV4075C8_L0_DSI_2_CPT_WVGA_CMD)
+	&ili9806c_chuanglaiya_KV4075C8_L0_dsi_2_CPT_wvga_cmd_lcm_drv,
+#endif
+
+#if defined(ILI9806_QIJIA_JX446003S0_CD_HSD_MCU18_FWVGA)
+	&ili9806_qijia_JX446003S0_CD_HSD_mcu18_fwvga_lcm_drv,
+#endif
+
+#if defined(ILI9806_ZHONGGUANGDIAN_M3401_HSD_MCU18_FWVGA)
+	&ili9806_zhongguangdian_M3401_HSD_mcu18_fwvga_lcm_drv,
+#endif
+
+#if defined(ILI9806E_HENGSHENG_HS045NK_35A_CPT_DSI_2_VDO_FWVGA)
+	&ili9806E_HENGSHENG_HS045NK_35A_CPT_dsi_2_vdo_fwvga_lcm_drv,
+#endif
+
+#if defined(OTM8009A_JINGTAI_JTD040347B1_BOE_DSI_2_WVGA)
+	&otm8009a_jingtai_JTD040347B1_BOE_dsi_2_wvga_lcm_drv,
+#endif
+
+#if defined(NT35510_SJGD_SJWV40N0250A_BOE_DSI_2_WVGA)
+	&nt35510_SJGD_SJWV40N0250A_BOE_dsi_2_wvga_lcm_drv,
+#endif
+
+#if defined(NT35517_JINMAN_SF_TC498H_9939A_HSD_DSI_QHD)
+	&nt35517_jinman_SF_TC498H_9939A_HSD_dsi_qhd_lcm_drv,
+#endif
+
+#if defined(RM68171_XINGLIANGDA_XLD0450790B1_25_BOE_DSI_2_FWVGA_VDO_72M_015)
+	&RM68171_XINGLIANGDA_XLD0450790B1_25_BOE_DSI_2_FWVGA_VDO_72M_015_lcm_drv,
+#endif
+
+#if defined(OTM8009A_HAOSHITONG_HF4588_BOE_MCU18_FWVGA)
+	&otm8009a_haoshitong_HF4588_BOE_mcu18_fwvga_lcm_drv,
+#endif
+
+#if defined(ILI9806E_CHUANMA_CMS51061TRKSZ2_BOE_DSI_2_VDO_WVGA)
+				&ili9806e_chuanma_CMS51061TRKSZ2_BOE_dsi_2_vdo_wvga_lcm_drv,
+#endif	
+
+#if defined(ILI9806E_XINYONGLONG_XYL45222_CMO_DSI_2_VDO_FWVGA)
+				&ILI9806E_XINYONGLONG_XYL45222_CMO_dsi_2_vdo_fwvga_lcm_drv,
+#endif	
+
+
+
+#if defined(NT35517_XINGLIANGDA_XLD0500940L1_25_LG_DSI_2_VDO_QHD)
+				&nt35517_xingliangda_XLD0500940L1_25_LG_dsi_2_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(RM68171_HUANYUTONG_HY_103970683_HSD_DSI_2_WVGA_VDO)
+				&RM68171_HUANYUTONG_HY_103970683_HSD_DSI_2_WVGA_VDO_lcm_drv,
+#endif
+
+#if defined(ILI9806E_CHUANGLAIYA_KV4075C8L1_IVO_DSI_2_VDO_WVGA)
+	&ili9806E_CHUANGLAIYA_KV4075C8L1_IVO_dsi_2_vdo_wvga_lcm_drv,
+#endif
+
+#if defined(ILI9806E_HANSEN_HS40175WVNC300_HSD_DSI_2_VDO_WVGA)
+	&ili9806E_hansen_HS40175WVNC300_HSD_dsi_2_vdo_wvga_lcm_drv,
+#endif
+
+#if defined(NT35510_HONGSHENG_HS4501310A_BOE_MCU18_FWVGA)
+	&nt35510_HONGSHENG_HS4501310A_BOE_mcu18_fwvga_lcm_drv,
+#endif
+
+#if defined(OTM8018B_HANSEN_HS50166FWNC39_00_BOE_DSI_VDO_2_FWVGA)
+				&otm8018b_hansen_HS50166FWNC39_00_BOE_dsi_vdo_2_fwvga_lcm_drv,
+#endif
+#if defined(NT35512_SHENGJIGUANGDIAN_SJWV40N0247B0_HSD_VDO_WVGA)
+	&nt35512_shengjiguangdian_SJWV40N0247B0_HSD_vdo_wvga_lcm_drv,
+#endif
+
+#if defined(ILI9806E_JINGTAI_JTD040347S3_HSD_DSI_2_VDO_WVGA)
+	&ili9806E_JINGTAI_JTD040347S3_HSD_dsi_2_vdo_wvga_lcm_drv,
+#endif
+
+#if defined(NT35517_HANSEN_HS50139QHNC25_CPT_DSI_2_VDO_QHD)
+	&nt35517_hansen_HS50139QHNC25_CPT_dsi_2_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(ILI9806_AIZHUOERTAI_IPS_DSI_WVGA_CMD)
+	&ili9806_aizhuoertai_IPS_dsi_wvga_cmd_lcm_drv,
+#endif
+
+#if defined(RM68171_ZHUOERSHI_Z40252N00I4OMA_BOE_DSI_2_WVGA_VDO)
+	&RM68171_zhuoershi_Z40252N00I4OMA_BOE_DSI_2_WVGA_VDO_lcm_drv,
+#endif	
+
+#if defined(NT35517_XINGLIANGDA_XLD0500980L1_25_LG_DSI_2_VDO_QHD)
+				&nt35517_xingliangda_XLD0500980L1_25_LG_dsi_2_vdo_qhd_lcm_drv,
+#endif		
+
+#if defined(OTM8018B_HAOSHITONG_HF50QRA_BOE_DSI_VDO_2_FWVGA)
+	&otm8018b_haoshitong_HF50QRA_BOE_dsi_vdo_2_fwvga_lcm_drv,
+#endif
+
+#if defined(NT35512_SHENGJI_SJFW45N0257_BOE_VDO_FWVGA)
+	&nt35512_shengji_SJFW45N0257_BOE_vdo_fwvga_lcm_drv,
+#endif
+
+#if defined(OTM8018B_JINGTAI_JTD0450XXC0_CMI_DSI_VDO_2_FWVGA)
+        &otm8018b_jingtai_JTD0450XXC0_CMI_dsi_vdo_2_fwvga_lcm_drv,
+#endif
+
+#if defined(OTM8019A_HUAYU_UD0102KP040B_IVO_DSI_VDO_2_WVGA)
+	&otm8019a_huayu_UD0102KP040B_IVO_dsi_vdo_2_wvga_lcm_drv,
+#endif
+
+#if defined(OTM8018B_PUNAI_PT040WVH010A_HSD_DSI_2_WVGA)
+	&otm8018b_PUNAI_PT040WVH010A_HSD_dsi_2_wvga_lcm_drv,
+#endif
+
+#if defined(SH1282_TUOPU_T40WV25BN003_BOE_DSI_2_WVGA)
+	&SH1282_TUOPU_T40WV25BN003_BOE_DSI_2_WVGA_lcm_drv,
+#endif
+
+#if defined(SH1282_SHENGJI_SJWV40N0247C0_IVO_DSI_2_WVGA)
+	&SH1282_shengji_SJWV40N0247C0_IVO_DSI_2_WVGA_lcm_drv,
+#endif
+
+#if defined(ILI9806E_KELAI_KF4534D10L0Y_CPT_DSI_2_VDO_FWVGA)
+	&ili9806E_kelai_KF4534D10L0Y_CPT_dsi_2_vdo_fwvga_lcm_drv,
+#endif
+
+#if defined(RM68171_ZHUOERSHI_Z45180N00I4_IVO_DSI_2_VDO_FWVGA)
+	&RM68171_zhuoershi_Z45180N00I4_IVO_dsi_2_vdo_fwvga_lcm_drv,
+#endif
+
+#if defined(OTM9605A_HONGSHENG_HS4501360A_CMI_DSI_2_VDO_QHD)
+	&otm9605a_hongsheng_HS4501360A_CMI_dsi_2_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(OTM9605A_YKL_LP047HPTP056A_HSD_DSI_2_QHD)
+	&otm9605a_ykl_LP047HPTP056A_HSD_dsi_2_qhd_lcm_drv,
+#endif      
+
+#if defined(OTM8018B_YKL_LP050CPYP243A_CMI_DSI_VDO_2_FWVGA)
+	&otm8018b_ykl_LP050CPYP243A_CMI_dsi_vdo_2_fwvga_lcm_drv,
+#endif
+
+#if defined(OTM8018B_QINGBANG_HQH5035_BOE_DSI_VDO_2_FWVGA)
+	&otm8018b_qingbang_HQH5035_BOE_dsi_vdo_2_fwvga_lcm_drv,
+#endif
+
+#if defined(OTM8018B_APEX_A45147N52H0_HSD_DSI_2_FWVGA)
+				&otm8018b_apex_A45147N52H0_HSD_dsi_2_fwvga_lcm_drv,
+#endif
+
+#if defined(NT35512_APEX_MSA45119N50BN_BOE_DSI_2_VDO_FWVGA)
+        &nt35512_apex_MSA45119N50BN_BOE_dsi_2_vdo_fwvga_lcm_drv,
+#endif
+
+#if defined(OTM8018B_PUNAI_PT040WVB010B_BOE_DSI_2_WVGA)
+        &otm8018b_punai_PT040WVB010B_BOE_dsi_2_wvga_lcm_drv,
+#endif
+
+#if defined(NT35310_HUARUI_S1769_TIANMA_MCU18_HVGA)
+	&nt35310_huarui_S1769_tianma_mcu18_hvga_lcm_drv,
+#endif
+
+#if defined(ILI9806E_JINGTAI_JTD040379B0_BOE_DSI_2_VDO_WVGA)
+        &ili9806e_jingtai_JTD040379B0_BOE_dsi_2_vdo_wvga_lcm_drv,
+#endif
+
+#if defined(ILI9806E_JINGTAI_JTD045047S0_HSD_DSI_2_VDO_FWVGA)
+        &ili9806E_JINGTAI_JTD045047S0_HSD_dsi_2_vdo_fwvga_lcm_drv,
+#endif
+
+#if defined(ILI9806E_APEX_A50177N50BI_BOE_DSI_2_VDO_FWVGA)
+  &ili9806E_apex_A50177N50BI_BOE_dsi_2_vdo_fwvga_lcm_drv,
+#endif
+
+#if defined(OTM8018B_DXGD_D500N3276V0_BOE_DSI_VDO_2_FWVGA)
+	&otm8018b_dxgd_D500N3276V0_BOE_dsi_vdo_2_fwvga_lcm_drv,
+#endif
+
+#if defined(ILI9806E_APEX_A50182N50BIA_BOE_DSI_2_VDO_FWVGA)
+        &ili9806E_APEX_A50182N50BIA_BOE_dsi_2_vdo_fwvga_lcm_drv,
+#endif
+
+#if defined(OTM8018B_HONGSHENG_HS5001333A_BOE_DSI_VDO_2_FWVGA)
+				&otm8018b_hongsheng_HS5001333A_BOE_dsi_vdo_2_fwvga_lcm_drv,
+#endif
+
+#if defined(OTM9605A_RUIXIN_RX_466OTM_977A_AUO_DSI_VDO_QHD)
+	&otm9605a_ruixin_RX_466OTM_977A_AUO_dsi_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(ILI9806E_APEX_A40318N31BI_BOE_DSI_2_VDO_WVGA)
+	&ili9806e_apex_A40318N31BI_BOE_dsi_2_vdo_wvga_lcm_drv,
+#endif	
+
+#if defined(OTM8018B_APEX_A40305N01VO_IVO_DSI_2_VDO_WVGA)
+	&otm8018b_apex_A40305N01VO_IVO_dsi_2_vdo_wvga_lcm_drv,
+#endif
+
+#if defined(HX8379C_KELAI_KFX5027E12L0EL_BOE_DSI_2_VDO_FWVGA)
+	&HX8379C_KELAI_KFX5027E12L0EL_BOE_DSI_2_VDO_FWVGA_lcm_drv,
+#endif
+
+#if defined(OTM8019A_HAIFEI_HF150391609A0_HSD_DSI_VDO_2_FWVGA)
+	&otm8019a_haifei_HF150391609A0_HSD_dsi_vdo_2_fwvga_lcm_drv,
+#endif
+
+#if defined(ILI9806E_JINGTAI_JTD050096S0_HSD_DSI_2_VDO_FWVGA)
+  &ili9806E_jingtai_JTD050096S0_HSD_dsi_2_vdo_fwvga_lcm_drv,
+#endif
+
+#if defined(OTM9605A_YKL_LP047HPTP042A_HSD_DSI_2_QHD)
+  &otm9605a_ykl_LP047HPTP042A_HSD_dsi_2_qhd_lcm_drv,
+#endif
+#if defined(OTM8019A_HF_14025_1626_A0_BOE_DSI_VDO_2_WVGA)
+				&otm8019a_HF_14025_1626_A0_BOE_dsi_vdo_2_wvga_lcm_drv,
+#endif
+
+#if defined(ILI9806E_HF_14025_0000_A0_BOE_DSI_2_VDO_WVGA)
+				&ili9806e_HF_14025_0000_A0_BOE_dsi_2_vdo_wvga_lcm_drv,
+#endif
+
+#if defined(ILI9806E_JINGTAI_JTD040379S1_IVO_DSI_2_VDO_WVGA)
+        &ili9806E_jingtai_JTD040379S1_IVO_dsi_2_vdo_wvga_lcm_drv,
+#endif
+
+#if defined(ILI9806E_WANCHANGLONG_W50137AAA_HSD_DSI_2_VDO_FWVGA)
+         &ili9806E_wanchanglong_W50137AAA_HSD_dsi_2_vdo_fwvga_lcm_drv,
+#endif
+
+#if defined(OTM8018B_KEYUDA_KP050BPF009A_BOE_FWVGA_VEDIO)
+				&OTM8018B_KEYUDA_KP050BPF009A_BOE_FWVGA_VEDIO_lcm_drv,
+#endif
+
+#if defined(ILI9806E_JINGCHUANG_A50182N50BIA_BOE_DSI_2_VDO_FWVGA)
+        &ILI9806E_JINGCHUANG_A50182N50BIA_BOE_DSI_2_VDO_FWVGA_lcm_drv,
+#endif
+
+#if defined(ILI9806E_JCR_JC4955016B0_BOE_DSI_2_VDO_FWVGA)
+  &ili9806e_jcr_JC4955016B0_BOE_dsi_2_vdo_fwvga_lcm_drv,
+#endif
+
+#if defined(HX8379C_KELAI_KFX4504E10_BOE_DSI_2_VDO_FWVGA)
+				&hx8379C_kelai_KFX4504E10_BOE_dsi_2_vdo_fwvga_lcm_drv,
+#endif
+
+#if defined(ILI9806E_JINGTAI_JTD050097B0_BOE_DSI_2_VDO_FWVGA)
+  &ili9806E_jingtai_JTD050097B0_BOE_dsi_2_vdo_fwvga_lcm_drv,
+#endif
+
+#if defined(NT35512_HONGSHENG_HS5001359A_BOE_DSI_2_VDO_FWVGA)
+  &nt35512_hongsheng_HS5001359A_BOE_dsi_2_vdo_fwvga_lcm_drv,
+#endif
+
+#if defined(ILI9806E_JINGTAI_JTD040380B0_HSD_DSI_2_VDO_WVGA)
+  &ili9806E_JINGTAI_JTD040380B0_HSD_dsi_2_vdo_wvga_lcm_drv,
+#endif
+
+#if defined(OTM9605A_MINGZE_MZ5D0N021_BOE_DSI_2_VDO_QHD)
+  	&OTM9605A_MINGZE_MZ5D0N021_BOE_DSI_2_VDO_QHD_lcm_drv,
+#endif
+
+#if defined(SH1282_TIANZHI_PT040WVH010A_IVO_DSI_2_WVGA)
+  &SH1282_TIANZHI_PT040WVH010A_IVO_DSI_2_WVGA_lcm_drv,
+#endif
+  
+#if defined(RM68140_JINPING_JP35H038B0_CMI_MCU18_HVGA)
+	&RM68140_JINPING_JP35H038B0_CMI_MCU18_HVGA_lcm_drv,
+#endif
+
+#if defined(HX8379C_KELAI_KV4085C8_IVO_DSI_2_VDO_WVGA)
+	&HX8379C_KELAI_KV4085C8_IVO_DSI_2_VDO_WVGA_lcm_drv,
+#endif	
+
+#if defined(HX8379C_CHUANGLAIYA_KV4075C8_IVO_DSI_VDO_WVGA)
+	&hx8379c_chuanglaiya_KV4075C8_IVO_dsi_vdo_wvga_lcm_drv,
+#endif
+
+#if defined(OTM8019A_ZHUERSHI_Z40282N00B4O_BOE_DSI_VDO_2_WVGA)
+	&otm8019a_zhuershi_Z40282N00B4O_BOE_dsi_vdo_2_wvga_lcm_drv
+#endif
+
+#if defined(ILI9806E_DEZHIXIN_Y83466_BOE_DSI_2_VDO_WVGA)
+	&ili9806e_dezhixin_Y83466_BOE_dsi_2_vdo_wvga_lcm_drv,
+#endif
+
+#if defined(NT35517_LINGLONG_T470_25M_HSD_DSI_2_VDO_QHD)
+	&nt35517_linglong_T470_25M_HSD_dsi_2_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(RM68171_QICAI_K40CM231613A1N_CMI_DSI_2_WVGA_VDO)
+	&RM68171_QICAI_K40CM231613A1N_CMI_DSI_2_WVGA_VDO_lcm_drv,
+#endif
+
+#if defined(RM68171_QICAI_K40BM231423A1N_BOE_DSI_2_WVGA_VDO)
+	&RM68171_QICAI_K40BM231423A1N_BOE_DSI_2_WVGA_VDO_lcm_drv,
+#endif
+
+#if defined(OTM8018B_DATONG_DT50118A_IVO_DSI_2_VDO_FWVGA)
+				&otm8018b_datong_DT50118A_IVO_dsi_2_vdo_fwvga_lcm_drv,
+#endif
+
+#if defined(HX8389B_XINLIANGDA_Z66_BOE_DSI_2_QHD)
+  &hx8389b_xinliangda_Z66_BOE_dsi_2_qhd_lcm_drv,
+#endif
+
+#if defined(OTM8019A_ZHUOERSHI_MS_Z50439N00B3O_BOE_DSI_VDO_2_FWVGA)
+  &otm8019a_zhuoershi_MS_Z50439N00B3O_BOE_dsi_vdo_2_fwvga_lcm_drv,
+#endif
+
+#if defined(HX8369B_XINSHENGHUA_SH43N_025V0F_AUO_DSI_2_WVGA)
+  &hx8369b_XINSHENGHUA_SH43N_025V0F_AUO_dsi_2_wvga_lcm_drv,
+#endif
+
+#if defined(RM68171_XINGUANGXIN_SSR40WV099AN_CTC_DSI_2_WVGA_VDO)
+  &RM68171_XINGUANGXIN_SSR40WV099AN_CTC_DSI_2_WVGA_VDO_lcm_drv,
+#endif
+
+#if defined(ILI9806E_HANSEN_HS40186WVNS23_BOE_DSI_2_VDO_WVGA)
+    &ILI9806E_HANSEN_HS40186WVNS23_BOE_DSI_2_VDO_WVGA_lcm_drv,
+#endif
+
+#if defined(ILI9806E_APEX_A50177N50BI_W508F_BOE_DSI_2_VDO_FWVGA)
+    &ili9806E_apex_A50177N50BI_W508F_BOE_dsi_2_vdo_fwvga_lcm_drv,
+#endif
+
+#if defined(HX8379C_KELAI_KFX5027E12L0EL_W508F_BOE_DSI_2_VDO_FWVGA)
+    &HX8379C_KELAI_KFX5027E12L0EL_W508F_BOE_DSI_2_VDO_FWVGA_lcm_drv,
+#endif
+
+#if defined(HX8379C_DAXIAN_D500N3323V0_BOE_DSI_2_VDO_FWVGA)
+         &hx8379c_daxian_D500N3323V0_BOE_dsi_2_vdo_fwvga_lcm_drv,
+#endif
+
+#if defined(OTM9605A_RUIXIN_RX_470OTM_977A_HSD_DSI_VDO_QHD)
+	&otm9605a_ruixin_RX_470OTM_977A_HSD_dsi_vdo_qhd_lcm_drv,
+#endif
+
+#if defined(RM68171_HUANYUTONG_HY105000604_HSD_DSI_2_FWVGA_VDO)
+        &RM68171_HUANYUTONG_HY105000604_HSD_DSI_2_FWVGA_VDO_lcm_drv,
+#endif
+#if defined(ILI9806E_DSI_VDO_FWVGA)
+        &ili9806e_dsi_vdo_fwvga_drv,
+#endif
+
+#if defined(ILI9806E_WVGA_DSI_VDO_TXD)
+        &ili9806e_wvga_dsi_vdo_txd_drv,
+#endif
+
+#if defined(HX8379A_DSI_VDO_AZET_IPS)
+        &hx8379a_dsi_vdo_azet_ips_lcm_drv,
+#endif
+
+#if defined(HX8379A_6572_DSI_VDO)
+        &hx8379a_6572_dsi_vdo_lcm_drv,
+#endif
+};
+
+
+#define LCM_COMPILE_ASSERT(condition) LCM_COMPILE_ASSERT_X(condition, __LINE__)
+#define LCM_COMPILE_ASSERT_X(condition, line) LCM_COMPILE_ASSERT_XX(condition, line)
+#define LCM_COMPILE_ASSERT_XX(condition, line) char assertion_failed_at_line_##line[(condition)?1:-1]
+
+unsigned int lcm_count = sizeof(lcm_driver_list)/sizeof(LCM_DRIVER*);
+LCM_COMPILE_ASSERT(0 != sizeof(lcm_driver_list)/sizeof(LCM_DRIVER*));
